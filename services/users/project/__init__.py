@@ -1,8 +1,9 @@
 # services/users/project/__init__.py
 
+
 import os
 
-from flask import Flask  # new
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
 
@@ -10,7 +11,6 @@ from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 
 
-# new
 def create_app(script_info=None):
 
     # instantiate the app
