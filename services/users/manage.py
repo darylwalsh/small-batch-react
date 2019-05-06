@@ -23,8 +23,8 @@ def recreate_db():
 @cli.command('seed_db')
 def seed_db():
     """Seeds the database."""
-    db.session.add(User(username='hooroosh', email="too@hooroo.sh"))
-    db.session.add(User(username='barkovurur', email="barko@live.com"))
+    db.session.add(User(username='daryl', email="daryl@blpc.us"))
+    db.session.add(User(username='dmw', email="gitopsreact@blpc.us"))
     db.session.commit()
 
 

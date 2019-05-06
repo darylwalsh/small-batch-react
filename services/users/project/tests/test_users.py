@@ -33,14 +33,14 @@ class TestUserService(BaseTestCase):
             response = self.client.post(
                 '/users',
                 data=json.dumps({
-                    'username': 'barko',
-                    'email': 'barko@live.com'
+                    'username': 'daryl',
+                    'email': 'daryl@blpc.us'
                 }),
                 content_type='application/json',
             )
             data = json.loads(response.data.decode())
             self.assertEqual(response.status_code, 201)
-            self.assertIn('barko@live.com was added!', data['message'])
+            self.assertIn('daryl@blpc.us was added!', data['message'])
             self.assertIn('success', data['status'])
 
     def test_add_user_invalid_json(self):
@@ -63,7 +63,7 @@ class TestUserService(BaseTestCase):
         with self.client:
             response = self.client.post(
                 '/users',
-                data=json.dumps({'email': 'barko@live.com'}),
+                data=json.dumps({'email': 'daryl@blpc.us'}),
                 content_type='application/json',
             )
             data = json.loads(response.data.decode())
@@ -77,16 +77,16 @@ class TestUserService(BaseTestCase):
             self.client.post(
                 '/users',
                 data=json.dumps({
-                    'username': 'barko',
-                    'email': 'barko@live.com'
+                    'username': 'daryl',
+                    'email': 'daryl@blpc.us'
                 }),
                 content_type='application/json',
             )
             response = self.client.post(
                 '/users',
                 data=json.dumps({
-                    'username': 'barko',
-                    'email': 'barko@live.com'
+                    'username': 'daryl',
+                    'email': 'daryl@blpc.us'
                 }),
                 content_type='application/json',
             )
@@ -98,14 +98,15 @@ class TestUserService(BaseTestCase):
 
     def test_single_user(self):
         """Ensure get single user behaves correctly."""
-        user = add_user('barko', 'barko@live.com')
+        user = add_user('daryl', 'daryl@blpc.us')
         with self.client:
             response = self.client.get(f'/users/{user.id}')
             data = json.loads(response.data.decode())
             self.assertEqual(response.status_code, 200)
-            self.assertIn('barko', data['data']['username'])
-            self.assertIn('barko@live.com', data['data']['email'])
+            self.assertIn('daryl', data['data']['username'])
+            self.assertIn('daryl@blpc.us', data['data']['email'])
             self.assertIn('success', data['status'])
+
 
     def test_single_user_no_id(self):
         """Ensure error is thrown if an id is not provided."""
@@ -127,19 +128,19 @@ class TestUserService(BaseTestCase):
 
     def test_all_users(self):
         """Ensure get all users behaves correctly."""
-        add_user('barko', 'barko@live.com')
-        add_user('fletcher', 'fletcher@notreal.com')
+        add_user('daryl', 'daryl@blpc.us')
+        add_user('bfc', 'bfc@freestabby.com')
         with self.client:
             response = self.client.get('/users')
             data = json.loads(response.data.decode())
             self.assertEqual(response.status_code, 200)
             self.assertEqual(len(data['data']['users']), 2)
-            self.assertIn('barko', data['data']['users'][0]['username'])
+            self.assertIn('daryl', data['data']['users'][0]['username'])
             self.assertIn(
-                'barko@live.com', data['data']['users'][0]['email'])
-            self.assertIn('fletcher', data['data']['users'][1]['username'])
+                'daryl@blpc.us', data['data']['users'][0]['email'])
+            self.assertIn('bfc', data['data']['users'][1]['username'])
             self.assertIn(
-                'fletcher@notreal.com', data['data']['users'][1]['email'])
+                'bfc@freestabby.com', data['data']['users'][1]['email'])
             self.assertIn('success', data['status'])
 
     def test_main_no_users(self):
@@ -153,15 +154,15 @@ class TestUserService(BaseTestCase):
     def test_main_with_users(self):
         """Ensure the main route behaves correctly when users have been
         added to the database."""
-        add_user('barko', 'barko@live.com')
-        add_user('fletcher', 'fletcher@notreal.com')
+        add_user('daryl', 'daryl@blpc.us')
+        add_user('bfc', 'bfc@freestabby.com')
         with self.client:
             response = self.client.get('/')
             self.assertEqual(response.status_code, 200)
             self.assertIn(b'All Users', response.data)
             self.assertNotIn(b'<p>No users!</p>', response.data)
-            self.assertIn(b'barko', response.data)
-            self.assertIn(b'fletcher', response.data)
+            self.assertIn(b'daryl', response.data)
+            self.assertIn(b'bfc', response.data)
 
     def test_main_add_user(self):
         """
@@ -170,13 +171,13 @@ class TestUserService(BaseTestCase):
         with self.client:
             response = self.client.post(
                 '/',
-                data={'username': 'barko', 'email': 'barko@sonotreal.com'},
+                data={'username': 'dmw', 'email': 'gitopsreact@blpc.us'},
                 follow_redirects=True
             )
             self.assertEqual(response.status_code, 200)
             self.assertIn(b'All Users', response.data)
             self.assertNotIn(b'<p>No users!</p>', response.data)
-            self.assertIn(b'barko', response.data)
+            self.assertIn(b'dmw', response.data)
 
 
 if __name__ == '__main__':
