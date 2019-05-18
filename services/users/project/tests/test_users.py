@@ -7,13 +7,7 @@ import unittest
 from project import db
 from project.api.models import User
 from project.tests.base import BaseTestCase
-
-
-def add_user(username, email):
-    user = User(username=username, email=email)
-    db.session.add(user)
-    db.session.commit()
-    return user
+from project.tests.utils import add_user
 
 
 class TestUserService(BaseTestCase):
@@ -106,7 +100,6 @@ class TestUserService(BaseTestCase):
             self.assertIn('daryl', data['data']['username'])
             self.assertIn('daryl@blpc.us', data['data']['email'])
             self.assertIn('success', data['status'])
-
 
     def test_single_user_no_id(self):
         """Ensure error is thrown if an id is not provided."""
