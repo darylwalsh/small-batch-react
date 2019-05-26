@@ -18,7 +18,10 @@ def index():
     if request.method == 'POST':
         username = request.form['username']
         email = request.form['email']
-        db.session.add(User(username=username, email=email))
+        password = request.form['password']
+        db.session.add(User(
+            username=username, email=email, password=password)
+        )
         db.session.commit()
     users = User.query.all()
     return render_template('index.html', users=users)
@@ -27,9 +30,9 @@ def index():
 class UsersPing(Resource):
     def get(self):
         return {
-        'status': 'success',
-        'message': 'pong!'
-    }
+            'status': 'success',
+            'message': 'pong!'
+        }
 
 
 class Users(Resource):
@@ -79,10 +82,12 @@ class UsersList(Resource):
             return response_object, 400
         username = post_data.get('username')
         email = post_data.get('email')
+        password = post_data.get('password')
         try:
             user = User.query.filter_by(email=email).first()
             if not user:
-                db.session.add(User(username=username, email=email))
+                db.session.add(
+                    User(username=username, email=email, password=password))
                 db.session.commit()
                 response_object['status'] = 'success'
                 response_object['message'] = f'{email} was added!'
@@ -93,6 +98,9 @@ class UsersList(Resource):
         except exc.IntegrityError:
             db.session.rollback()
             return response_object, 400
+        except (exc.IntegrityError, ValueError):
+            db.session.rollback()
+            return jsonify(response_object), 400
 
 
 api.add_resource(UsersPing, '/users/ping')

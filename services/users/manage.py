@@ -34,8 +34,10 @@ def recreate_db():
 @cli.command('seed_db')
 def seed_db():
     """Seeds the database."""
-    db.session.add(User(username='daryl', email="daryl@blpc.us"))
-    db.session.add(User(username='dmw', email="gitopsreact@blpc.us"))
+    db.session.add(User(username='daryl', email='daryl@blpc.us',
+                        password='greaterthaneight'))
+    db.session.add(User(username='dmw', email='gitopsreact@blpc.us',
+                        password='greaterthaneight'))
     db.session.commit()
 
 
@@ -47,6 +49,7 @@ def test():
     if result.wasSuccessful():
         return 0
     sys.exit(result)
+
 
 @cli.command()
 def cov():
