@@ -7,6 +7,7 @@ from flask_restful import Resource, Api
 
 from project import db
 from project.api.models import User
+from project.api.utils import authenticate_restful, is_admin
 
 
 users_blueprint = Blueprint('users', __name__, template_folder='./templates')
@@ -62,6 +63,9 @@ class Users(Resource):
 
 
 class UsersList(Resource):
+
+    method_decorators = {'post': [authenticate_restful]}
+
     def get(self):
         """Get all users"""
         response_object = {
@@ -72,35 +76,41 @@ class UsersList(Resource):
         }
         return response_object, 200
 
-    def post(self):
-        post_data = request.get_json()
-        response_object = {
-            'status': 'fail',
-            'message': 'Invalid payload.'
-        }
-        if not post_data:
+
+def post(self, resp):
+    post_data = request.get_json()
+    response_object = {
+        'status': 'fail',
+        'message': 'Invalid payload.'
+    }
+    if not is_admin(resp):
+        response_object['message'] = 'You do not have permission to do that.'
+        return response_object, 401
+    if not post_data:
+        return response_object, 400
+    username = post_data.get('username')
+    email = post_data.get('email')
+    password = post_data.get('password')
+    try:
+        user = User.query.filter_by(email=email).first()
+        if not user:
+            db.session.add(User(
+                username=username, email=email, password=password)
+            )
+            db.session.commit()
+            response_object['status'] = 'success'
+            response_object['message'] = f'{email} was added!'
+            return response_object, 201
+        else:
+            response_object['message'] = \
+                'Sorry. That email already exists.'
             return response_object, 400
-        username = post_data.get('username')
-        email = post_data.get('email')
-        password = post_data.get('password')
-        try:
-            user = User.query.filter_by(email=email).first()
-            if not user:
-                db.session.add(
-                    User(username=username, email=email, password=password))
-                db.session.commit()
-                response_object['status'] = 'success'
-                response_object['message'] = f'{email} was added!'
-                return response_object, 201
-            else:
-                response_object['message'] = 'Sorry. That email already exists.'
-                return response_object, 400
-        except exc.IntegrityError:
-            db.session.rollback()
-            return response_object, 400
-        except (exc.IntegrityError, ValueError):
-            db.session.rollback()
-            return jsonify(response_object), 400
+    except exc.IntegrityError:
+        db.session.rollback()
+        return response_object, 400
+    except (exc.IntegrityError, ValueError):
+        db.session.rollback()
+        return response_object, 400
 
 
 api.add_resource(UsersPing, '/users/ping')
