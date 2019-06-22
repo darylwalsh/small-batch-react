@@ -9,6 +9,8 @@ class UserStatus extends Component {
       email: '',
       id: '',
       username: '',
+      active: '',
+      admin: '',
     }
   }
   componentDidMount() {
@@ -31,6 +33,8 @@ class UserStatus extends Component {
           email: res.data.data.email,
           id: res.data.data.id,
           username: res.data.data.username,
+          active: String(res.data.data.active),
+          admin: String(res.data.data.admin),
         })
       })
       .catch(error => {
@@ -57,6 +61,12 @@ class UserStatus extends Component {
           </li>
           <li>
             <strong>Username:</strong> {this.state.username}
+          </li>
+          <li>
+            <strong>Active:</strong> {this.state.active}
+          </li>
+          <li>
+            <strong>Admin:</strong> {this.state.admin}
           </li>
         </ul>
       </div>
