@@ -2,4 +2,4 @@ __pycache__
 env
 users/htmlcov/
 .env
-XDG_CACHE_HOME/
+XDG_CACHE_HOME/*
