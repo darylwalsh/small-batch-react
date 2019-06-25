@@ -1,0 +1,31 @@
+Arguments: 
+  /home/barko187/.nvm/versions/node/v10.15.0/bin/node /home/barko187/.nvm/versions/node/v10.15.0/bin/yarn global dir
+
+PATH: 
+  /home/barko187/.local/bin /home/barko187/Android/Sdk/platform-tools /home/barko187/Android/Sdk/tools /home/barko187/.gem/ruby/2.6.0/bin /home/barko187/.gem/ruby/2.6.0/bin  /home/barko187/.yarn/bin:/home/barko187/.nvm/versions/node/v10.15.0/bin:/home/barko187/.local/bin:/home/barko187/Android/Sdk/platform-tools /home/barko187/Android/Sdk/tools /home/barko187/.gem/ruby/2.6.0/bin /home/barko187/.gem/ruby/2.6.0/bin  /home/barko187/.yarn/bin:/opt/google-cloud-sdk/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/opt/cuda/bin:/opt/flutter/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin:/home/barko187/anaconda3/bin/:/home/barko187/anaconda3/bin/:/home/barko187/anaconda3/bin/
+
+Yarn version: 
+  1.13.0
+
+Node version: 
+  10.15.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  SyntaxError: /home/barko187/Documents/domains/small-batch-react-fork/package.json: Unexpected end of JSON input
+      at JSON.parse (<anonymous>)
+      at /home/barko187/.nvm/versions/node/v10.15.0/lib/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/home/barko187/.nvm/versions/node/v10.15.0/lib/node_modules/yarn/lib/cli.js:304:30)
+      at /home/barko187/.nvm/versions/node/v10.15.0/lib/node_modules/yarn/lib/cli.js:315:13
+
+npm manifest: 
+  
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
