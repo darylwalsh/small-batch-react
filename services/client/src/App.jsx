@@ -3,7 +3,6 @@ import axios from 'axios'
 import { Route, Switch } from 'react-router-dom'
 
 import UsersList from './components/UsersList'
-import AddUser from './components/AddUser'
 import About from './components/About'
 import NavBar from './components/NavBar'
 import Form from './components/Form'
@@ -28,14 +27,16 @@ class App extends Component {
     this.addUser = this.addUser.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.handleUserFormSubmit = this.handleUserFormSubmit.bind(this)
+    this.handleFormChange = this.handleFormChange.bind(this)
     this.logoutUser = this.logoutUser.bind(this)
+  }
+  componentWillMount() {
+    if (window.localStorage.getItem('authToken')) {
+      this.setState({ isAuthenticated: true })
+    }
   }
   componentDidMount() {
     this.getUsers()
-  }
-  logoutUser() {
-    window.localStorage.clear()
-    this.setState({ isAuthenticated: false })
   }
   getUsers() {
     axios
@@ -63,13 +64,6 @@ class App extends Component {
         console.log(err)
       })
   }
-  clearFormState() {
-    this.setState({
-      formData: { username: '', email: '', password: '' },
-      username: '',
-      email: '',
-    })
-  }
   handleChange(event) {
     const obj = {}
     obj[event.target.name] = event.target.value
@@ -94,7 +88,6 @@ class App extends Component {
     axios
       .post(url, data)
       .then(res => {
-        console.log(res.data)
         this.clearFormState()
         window.localStorage.setItem('authToken', res.data.auth_token)
         this.setState({ isAuthenticated: true })
@@ -103,6 +96,17 @@ class App extends Component {
       .catch(err => {
         console.log(err)
       })
+  }
+  clearFormState() {
+    this.setState({
+      formData: { username: '', email: '', password: '' },
+      username: '',
+      email: '',
+    })
+  }
+  logoutUser() {
+    window.localStorage.clear()
+    this.setState({ isAuthenticated: false })
   }
   render() {
     return (
@@ -120,22 +124,7 @@ class App extends Component {
                   <Route
                     exact
                     path="/"
-                    render={() => (
-                      <div>
-                        <h1 className="title is-1">All Users</h1>
-                        <hr />
-                        <br />
-                        <AddUser
-                          username={this.state.username}
-                          email={this.state.email}
-                          addUser={this.addUser}
-                          handleChange={this.handleChange}
-                        />
-                        <br />
-                        <br />
-                        <UsersList users={this.state.users} />
-                      </div>
-                    )}
+                    render={() => <UsersList users={this.state.users} />}
                   />
                   <Route exact path="/about" component={About} />
                   <Route
@@ -145,8 +134,8 @@ class App extends Component {
                       <Form
                         formType={'Register'}
                         formData={this.state.formData}
-                        handleFormChange={this.handleFormChange}
                         handleUserFormSubmit={this.handleUserFormSubmit}
+                        handleFormChange={this.handleFormChange}
                         isAuthenticated={this.state.isAuthenticated}
                       />
                     )}
@@ -158,17 +147,8 @@ class App extends Component {
                       <Form
                         formType={'Login'}
                         formData={this.state.formData}
-                        handleFormChange={this.handleFormChange}
                         handleUserFormSubmit={this.handleUserFormSubmit}
-                        isAuthenticated={this.state.isAuthenticated}
-                      />
-                    )}
-                  />
-                  <Route
-                    exact
-                    path="/status"
-                    render={() => (
-                      <UserStatus
+                        handleFormChange={this.handleFormChange}
                         isAuthenticated={this.state.isAuthenticated}
                       />
                     )}
@@ -179,6 +159,15 @@ class App extends Component {
                     render={() => (
                       <Logout
                         logoutUser={this.logoutUser}
+                        isAuthenticated={this.state.isAuthenticated}
+                      />
+                    )}
+                  />
+                  <Route
+                    exact
+                    path="/status"
+                    render={() => (
+                      <UserStatus
                         isAuthenticated={this.state.isAuthenticated}
                       />
                     )}
