@@ -33,7 +33,6 @@ class UserStatus extends Component {
           email: res.data.data.email,
           id: res.data.data.id,
           username: res.data.data.username,
-
           active: String(res.data.data.active),
           admin: String(res.data.data.admin),
         })
