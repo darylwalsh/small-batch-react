@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Redirect } from 'react-router-dom'
+
 import { registerFormRules, loginFormRules } from './form-rules.js'
 import FormErrors from './FormErrors.jsx'
 
@@ -61,7 +62,12 @@ class Form extends Component {
         this.props.loginUser(res.data.auth_token)
       })
       .catch(err => {
-        console.log(err)
+        if (formType === 'Login') {
+          this.props.createMessage('User does not exist.', 'danger')
+        }
+        if (formType === 'Register') {
+          this.props.createMessage('That user already exists.', 'danger')
+        }
       })
   }
   validateForm() {
@@ -123,7 +129,6 @@ class Form extends Component {
       return <Redirect to="/" />
     }
     let formRules = this.state.loginFormRules
-
     if (this.props.formType === 'Register') {
       formRules = this.state.registerFormRules
     }
@@ -178,7 +183,7 @@ class Form extends Component {
             type="submit"
             className="button is-primary is-medium is-fullwidth"
             value="Submit"
-            disabled={this.state.valid}
+            disabled={!this.state.valid}
           />
         </form>
       </div>
