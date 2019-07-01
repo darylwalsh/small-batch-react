@@ -8,17 +8,22 @@ import NavBar from './components/NavBar'
 import Form from './components/forms/Form'
 import Logout from './components/Logout'
 import UserStatus from './components/UserStatus'
+import Message from './components/Message'
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
       users: [],
-      title: 'TestDriven.io',
+      title: 'GitOpsReact.io',
       isAuthenticated: false,
+      messageName: null,
+      messageType: null,
     }
     this.logoutUser = this.logoutUser.bind(this)
     this.loginUser = this.loginUser.bind(this)
+    this.createMessage = this.createMessage.bind(this)
+    this.removeMessage = this.removeMessage.bind(this)
   }
   componentWillMount() {
     if (window.localStorage.getItem('authToken')) {
@@ -44,6 +49,22 @@ class App extends Component {
     window.localStorage.setItem('authToken', token)
     this.setState({ isAuthenticated: true })
     this.getUsers()
+    this.createMessage('Welcome!', 'success')
+  }
+  createMessage(name = 'Sanity Check', type = 'success') {
+    this.setState({
+      messageName: name,
+      messageType: type,
+    })
+    setTimeout(() => {
+      this.removeMessage()
+    }, 3000)
+  }
+  removeMessage() {
+    this.setState({
+      messageName: null,
+      messageType: null,
+    })
   }
   render() {
     return (
@@ -54,6 +75,13 @@ class App extends Component {
         />
         <section className="section">
           <div className="container">
+            {this.state.messageName && this.state.messageType && (
+              <Message
+                messageName={this.state.messageName}
+                messageType={this.state.messageType}
+                removeMessage={this.removeMessage}
+              />
+            )}
             <div className="columns">
               <div className="column is-half">
                 <br />
@@ -72,6 +100,7 @@ class App extends Component {
                         formType={'Register'}
                         isAuthenticated={this.state.isAuthenticated}
                         loginUser={this.loginUser}
+                        createMessage={this.createMessage}
                       />
                     )}
                   />
@@ -83,6 +112,7 @@ class App extends Component {
                         formType={'Login'}
                         isAuthenticated={this.state.isAuthenticated}
                         loginUser={this.loginUser}
+                        createMessage={this.createMessage}
                       />
                     )}
                   />
