@@ -6,6 +6,18 @@ services:
 env:
   DOCKER_COMPOSE_VERSION: 1.23.2
 
+  COMMIT: ${TRAVIS_COMMIT::8}
+  MAIN_REPO: https://github.com/darylwalsh/small-batch-react.git
+  USERS: gitopsreact-users
+  USERS_REPO: ${MAIN_REPO}#${TRAVIS_BRANCH}:services/users
+  USERS_DB: gitopsreact-users_db
+  USERS_DB_REPO: ${MAIN_REPO}#${TRAVIS_BRANCH}:services/users/project/db
+  CLIENT: gitopsreact-client
+  CLIENT_REPO: ${MAIN_REPO}#${TRAVIS_BRANCH}:services/client
+  SWAGGER: gitopsreact-swagger
+  SWAGGER_REPO: ${MAIN_REPO}#${TRAVIS_BRANCH}:services/swagger
+  SECRET_KEY: my_precious
+
 before_install:
   - sudo rm /usr/local/bin/docker-compose
   - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
@@ -18,3 +30,6 @@ before_script:
 
 script:
   - bash test.sh stage
+
+after_success:
+  - bash ./docker-push.sh
