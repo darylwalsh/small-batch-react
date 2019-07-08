@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 env=$1
 fails=""
 
@@ -17,7 +16,7 @@ dev() {
   inspect $? users
   docker-compose exec users flake8 project
   inspect $? users-lint
-  docker-compose exec client npm test -- --coverage
+  docker-compose exec client npm test -- --watchAll=false
   inspect $? client
   docker-compose down
 }
@@ -51,3 +50,5 @@ else
   echo "Tests passed!"
   exit 0
 fi
+
+# eof

@@ -2,6 +2,7 @@ sudo: required
 services:
   - docker
 env:
+  NODE_ENV: test
   DOCKER_COMPOSE_VERSION: 1.23.2
   COMMIT: '${TRAVIS_COMMIT::8}'
   MAIN_REPO: https://github.com/darylwalsh/small-batch-react.git
