@@ -16,6 +16,13 @@ env:
   SWAGGER: gitopsreact-swagger
   SWAGGER_REPO: '${MAIN_REPO}#${TRAVIS_BRANCH}:services/swagger'
   SECRET_KEY: my_precious
+cache:
+  # Caches $HOME/.npm when npm ci is default script command
+  # Caches node_modules in all other cases
+  npm: true
+  directories:
+    # we also need to cache folder with Cypress binary
+    - ~/.cache
 before_install:
   - sudo rm /usr/local/bin/docker-compose
   - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
@@ -23,7 +30,7 @@ before_install:
   - sudo mv docker-compose /usr/local/bin
 before_script:
   - export REACT_APP_USERS_SERVICE_URL=http://127.0.0.1
-  - npm install
+  - npm ci
 script:
   - bash test.sh $TRAVIS_BRANCH
 after_success:
