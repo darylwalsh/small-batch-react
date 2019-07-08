@@ -23,6 +23,7 @@ before_install:
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
 install:
+  - npm i -g npm@6.9.0
   - npm ci
 before_script:
   - export REACT_APP_USERS_SERVICE_URL=http://127.0.0.1
