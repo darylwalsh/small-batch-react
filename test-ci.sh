@@ -17,7 +17,7 @@ dev() {
   inspect $? users
   docker-compose exec users flake8 project
   inspect $? users-lint
-  docker-compose exec client npm test -- --watchAll=false
+  docker-compose exec client npm test
   inspect $? client
   docker-compose down
 }
