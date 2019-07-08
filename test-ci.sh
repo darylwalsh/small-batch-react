@@ -37,10 +37,10 @@ if [[ "${env}" == "development" ]]; then
   dev
 elif [[ "${env}" == "staging" ]]; then
   echo "Running e2e tests!"
-  e2e stage
+  #e2e stage
 elif [[ "${env}" == "production" ]]; then
   echo "Running e2e tests!"
-  e2e prod
+  #e2e prod
 fi
 
 # return proper code

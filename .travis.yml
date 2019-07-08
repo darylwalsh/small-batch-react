@@ -28,7 +28,7 @@ install:
 before_script:
   - export REACT_APP_USERS_SERVICE_URL=http://127.0.0.1
 script:
-  - bash test.sh $TRAVIS_BRANCH
+  - bash test-ci.sh $TRAVIS_BRANCH
 cache:
   # Caches $HOME/.npm when npm ci is default script command
   # Caches node_modules in all other cases
