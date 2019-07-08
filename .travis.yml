@@ -23,6 +23,6 @@ before_script:
   - export REACT_APP_USERS_SERVICE_URL=http://127.0.0.1
   - npm install
 script:
-  - bash test.sh stage
+  - bash test.sh $TRAVIS_BRANCH
 after_success:
   - bash ./docker-push.sh
