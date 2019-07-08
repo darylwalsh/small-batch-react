@@ -1,29 +1,28 @@
 sudo: required
 services:
-- docker
+  - docker
 env:
   DOCKER_COMPOSE_VERSION: 1.23.2
-  COMMIT: "${TRAVIS_COMMIT::8}"
+  COMMIT: '${TRAVIS_COMMIT::8}'
   MAIN_REPO: https://github.com/darylwalsh/small-batch-react.git
   USERS: gitopsreact-users
-  USERS_REPO: "${MAIN_REPO}#${TRAVIS_BRANCH}:services/users"
+  USERS_REPO: '${MAIN_REPO}#${TRAVIS_BRANCH}:services/users'
   USERS_DB: gitopsreact-users_db
-  USERS_DB_REPO: "${MAIN_REPO}#${TRAVIS_BRANCH}:services/users/project/db"
+  USERS_DB_REPO: '${MAIN_REPO}#${TRAVIS_BRANCH}:services/users/project/db'
   CLIENT: gitopsreact-client
-  CLIENT_REPO: "${MAIN_REPO}#${TRAVIS_BRANCH}:services/client"
+  CLIENT_REPO: '${MAIN_REPO}#${TRAVIS_BRANCH}:services/client'
   SWAGGER: gitopsreact-swagger
-  SWAGGER_REPO: "${MAIN_REPO}#${TRAVIS_BRANCH}:services/swagger"
+  SWAGGER_REPO: '${MAIN_REPO}#${TRAVIS_BRANCH}:services/swagger'
   secure: BNpKSF4H8uXYohbDSSHYvHmP7Me8gLvRci4GmUl1Yr1ik0apbVcSoL+jhJYNf8W/ut7CVh8H8sn3I+RSiRZVZGhq+5RkA2tM3G8N6hHFa65uZ8By0K4G902mE4cM6uHikPzATIwqvWwKEWtQYd7fvskzo/S0eb8BZcW1059DfZda+1YbKBf2DjxMnSFwa/2wtvklLomB8hbNmyE95Y16+cXZJoC8Xxno6XDeCPUSacj/8f+q/Gg1+PaIIl7JVRmQmAjDSEg3UmhFoj7mMDaSFguPwUJXi45mI0eiJXUe0ZYui40ed1AuLIY8IeH60qiU5bldJnnvnNTswdf0vTSEeUkwKGsNhCFDszmzYxH4e/LD+bkCsvC+ZrVdlO38vnGtKusBehc+kYkCZAS7YfetyFX51nQgRvogbJNDzRekhFTVVW5x+W6ux8TS+uTM2wtt1+l8Z69Am+4MZM/+gq+u4FCwzKXU9wzckm/Tq0eQHAQOUhN8+TOhySUsL+Hh8TJbVvfJv85H12PckseZg7rAdsXq+vV8kJC62sX94/m/LbrJbV68vCrI2JXEnMoxJeHf9FY79eFgjE7KLC+N4anMkoitJZ8KNDuq08r4Q0vk3i43xESPU+84Zlgwdv5OKIWErEAG0kaStxx3vr+lPN5MLG8Y6Xutz7jePzuM4Xl5S24=
 before_install:
-- sudo rm /usr/local/bin/docker-compose
-- curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname
-  -s`-`uname -m` > docker-compose
-- chmod +x docker-compose
-- sudo mv docker-compose /usr/local/bin
+  - sudo rm /usr/local/bin/docker-compose
+  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+  - chmod +x docker-compose
+  - sudo mv docker-compose /usr/local/bin
 before_script:
-- export REACT_APP_USERS_SERVICE_URL=http://127.0.0.1
-- npm install
+  - export REACT_APP_USERS_SERVICE_URL=http://127.0.0.1
+  - npm install
 script:
-- bash test.sh stage
+  - bash test.sh stage
 after_success:
-- bash ./docker-push.sh
+  - bash ./docker-push.sh
