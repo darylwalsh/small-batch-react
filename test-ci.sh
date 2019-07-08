@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 env=$1
 fails=""
 
@@ -51,3 +50,5 @@ else
   echo "Tests passed!"
   exit 0
 fi
+
+# eof
