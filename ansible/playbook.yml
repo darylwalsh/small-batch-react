@@ -1,0 +1,30 @@
+---
+- hosts: 'localhost'
+  connection: 'local'
+  #
+  # Start stopped instances specified by tag
+  #
+  tasks:
+    - name: Start ec2 instance smabatreact
+      local_action:
+        module: ec2
+        region: us-east-1
+        instance_tags:
+          Name: smabatreact
+        state: running
+  tasks:
+    - name: Start ec2 instance smabatreact-stage
+      local_action:
+        module: ec2
+        region: us-east-1
+        instance_tags:
+          Name: smabatreact-stage
+        state: running
+#
+# Restart instances specified by tag
+#
+# - local_action:
+#     module: ec2
+#     instance_tags:
+#       Name: ExtraPower
+#     state: restarted
