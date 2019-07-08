@@ -3,3 +3,4 @@ env
 users/htmlcov/
 .env
 XDG_CACHE_HOME/*
+!services/users/requirements.txt
