@@ -1,4 +1,8 @@
 #!/bin/sh
+# TODO: pull images from ECR cache
+# https://semaphoreci.com/docs/docker/docker-layer-caching.html
+# https://userlinux.net/how-publish-docker-images-ecr.html
+# https://github.com/travis-ci/travis-ci/issues/5358#issuecomment-290139438
 
 if [ -z "$TRAVIS_PULL_REQUEST" ] || [ "$TRAVIS_PULL_REQUEST" == "false" ]
 then
