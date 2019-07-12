@@ -5,3 +5,7 @@ users/htmlcov/
 XDG_CACHE_HOME/*
 !services/users/requirements.txt
 ansible/*
+cypress/snapshots/
+cypress/snapshots/*
+terraform/
+terraform/*
