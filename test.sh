@@ -17,8 +17,13 @@ server() {
   inspect $? users
   docker-compose exec users flake8 project
   inspect $? users-lint
+  docker-compose exec exercises python manage.py test
+  inspect $? exercises
+  docker-compose exec exercises flake8 project
+  inspect $? exercises-lint
   docker-compose down
 }
+
 
 # run client-side tests
 client() {
@@ -44,12 +49,15 @@ all() {
   inspect $? users
   docker-compose exec users flake8 project
   inspect $? users-lint
-  docker-compose exec client npm test
+  docker-compose exec exercises python manage.py test
+  inspect $? exercises
+  docker-compose exec exercises flake8 project
+  inspect $? exercises-lint
+  docker-compose exec client npm test -- --coverage
   inspect $? client
   docker-compose down
   e2e
 }
-
 # run appropriate tests
 if [[ "${type}" == "server" ]]; then
   echo "\n"

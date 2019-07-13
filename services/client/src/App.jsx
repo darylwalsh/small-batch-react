@@ -2,13 +2,15 @@ import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import axios from 'axios'
 
-import UsersList from './components/UsersList'
 import About from './components/About'
-import NavBar from './components/NavBar'
+import Exercises from './components/Exercises'
+import Footer from './components/Footer'
 import Form from './components/forms/Form'
 import Logout from './components/Logout'
-import UserStatus from './components/UserStatus'
 import Message from './components/Message'
+import NavBar from './components/NavBar'
+import UsersList from './components/UsersList'
+import UserStatus from './components/UserStatus'
 
 class App extends Component {
   constructor() {
@@ -89,6 +91,13 @@ class App extends Component {
                   <Route
                     exact
                     path="/"
+                    render={() => (
+                      <Exercises isAuthenticated={this.state.isAuthenticated} />
+                    )}
+                  />
+                  <Route
+                    exact
+                    path="/all-users"
                     render={() => <UsersList users={this.state.users} />}
                   />
                   <Route exact path="/about" component={About} />
@@ -140,6 +149,7 @@ class App extends Component {
             </div>
           </div>
         </section>
+        <Footer />
       </div>
     )
   }
