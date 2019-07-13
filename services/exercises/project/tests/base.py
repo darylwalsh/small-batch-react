@@ -1,9 +1,8 @@
-# project/tests/base.py
-
+# services/exercises/project/tests/base.py
 
 from flask_testing import TestCase
 
-from project import create_app
+from project import create_app, db
 
 app = create_app()
 
@@ -13,8 +12,12 @@ class BaseTestCase(TestCase):
         app.config.from_object('project.config.TestingConfig')
         return app
 
+    # new
     def setUp(self):
-        pass
+        db.create_all()
+        db.session.commit()
 
+    # new
     def tearDown(self):
-        pass
+        db.session.remove()
+        db.drop_all()

@@ -1,5 +1,4 @@
-# manage.py
-
+# services/exercises/manage.py
 
 import sys
 import unittest
@@ -7,8 +6,8 @@ import unittest
 import coverage
 from flask.cli import FlaskGroup
 
-from project import create_app
-
+from project import create_app, db       # new
+from project.api.models import Exercise  # new
 
 COV = coverage.coverage(
     branch=True,
@@ -48,6 +47,13 @@ def cov():
         COV.erase()
         return 0
     sys.exit(result)
+
+
+@cli.command('recreate_db')
+def recreate_db():
+    db.drop_all()
+    db.create_all()
+    db.session.commit()
 
 
 if __name__ == '__main__':
