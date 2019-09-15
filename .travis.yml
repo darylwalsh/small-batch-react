@@ -1,40 +1,40 @@
-sudo: required
-services:
-  - docker
-env:
-  CI: true
-  NODE_ENV: test
-  DOCKER_COMPOSE_VERSION: 1.23.2
-  COMMIT: '${TRAVIS_COMMIT::8}'
-  MAIN_REPO: https://github.com/darylwalsh/small-batch-react.git
-  USERS: gitopsreact-users
-  USERS_REPO: '${MAIN_REPO}#${TRAVIS_BRANCH}:services/users'
-  USERS_DB: gitopsreact-users_db
-  USERS_DB_REPO: '${MAIN_REPO}#${TRAVIS_BRANCH}:services/users/project/db'
-  CLIENT: gitopsreact-client
-  CLIENT_REPO: '${MAIN_REPO}#${TRAVIS_BRANCH}:services/client'
-  SWAGGER: gitopsreact-swagger
-  SWAGGER_REPO: '${MAIN_REPO}#${TRAVIS_BRANCH}:services/swagger'
-  SECRET_KEY: my_precious
+# sudo: required
+# services:
+#   - docker
+# env:
+#   CI: true
+#   NODE_ENV: test
+#   DOCKER_COMPOSE_VERSION: 1.23.2
+#   COMMIT: '${TRAVIS_COMMIT::8}'
+#   MAIN_REPO: https://github.com/darylwalsh/small-batch-react.git
+#   USERS: gitopsreact-users
+#   USERS_REPO: '${MAIN_REPO}#${TRAVIS_BRANCH}:services/users'
+#   USERS_DB: gitopsreact-users_db
+#   USERS_DB_REPO: '${MAIN_REPO}#${TRAVIS_BRANCH}:services/users/project/db'
+#   CLIENT: gitopsreact-client
+#   CLIENT_REPO: '${MAIN_REPO}#${TRAVIS_BRANCH}:services/client'
+#   SWAGGER: gitopsreact-swagger
+#   SWAGGER_REPO: '${MAIN_REPO}#${TRAVIS_BRANCH}:services/swagger'
+#   SECRET_KEY: my_precious
 
-before_install:
-  - sudo rm /usr/local/bin/docker-compose
-  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
-  - chmod +x docker-compose
-  - sudo mv docker-compose /usr/local/bin
-install:
-  - npm i -g npm@6.9.0
-  - npm ci
-before_script:
-  - export REACT_APP_USERS_SERVICE_URL="http://smabatreact-staging-alb-1712923849.us-east-1.elb.amazonaws.com"
-script:
-  - bash test-ci.sh $TRAVIS_BRANCH
-cache:
-  # Caches $HOME/.npm when npm ci is default script command
-  # Caches node_modules in all other cases
-  npm: true
-  directories:
-    # we also need to cache folder with Cypress binary
-    - ~/.cache
-after_success:
-  - bash ./docker-push.sh
+# before_install:
+#   - sudo rm /usr/local/bin/docker-compose
+#   - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+#   - chmod +x docker-compose
+#   - sudo mv docker-compose /usr/local/bin
+# install:
+#   - npm i -g npm@6.9.0
+#   - npm ci
+# before_script:
+#   - export REACT_APP_USERS_SERVICE_URL="http://smabatreact-staging-alb-1712923849.us-east-1.elb.amazonaws.com"
+# script:
+#   - bash test-ci.sh $TRAVIS_BRANCH
+# cache:
+#   # Caches $HOME/.npm when npm ci is default script command
+#   # Caches node_modules in all other cases
+#   npm: true
+#   directories:
+#     # we also need to cache folder with Cypress binary
+#     - ~/.cache
+# after_success:
+#   - bash ./docker-push.sh
