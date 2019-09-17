@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/darylwalsh/small-batch-react/compare/v1.2.0...v1.3.0) (2019-09-17)
+
+
+### Features
+
+* **travis-ci:** re-enable travis-ci ([cdbee8b](https://github.com/darylwalsh/small-batch-react/commit/cdbee8b))
+
 ## 1.2.0 (2019-09-15)
 
 
