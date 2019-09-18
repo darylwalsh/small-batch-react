@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/darylwalsh/small-batch-react/compare/v1.3.0...v1.4.0) (2019-09-18)
+
+
+### Features
+
+* **aws_ecr:** add ecr into ci process ([65e28df](https://github.com/darylwalsh/small-batch-react/commit/65e28df))
+
 ## [1.3.0](https://github.com/darylwalsh/small-batch-react/compare/v1.2.0...v1.3.0) (2019-09-17)
 
 
