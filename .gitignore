@@ -24,3 +24,5 @@ node_modules/*
 .vscode/
 .reference
 .reference/
+terraform.tfvars
+/**/*/terraform.tfvars
