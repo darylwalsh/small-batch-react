@@ -5,7 +5,7 @@ then
 
   if [[ "$TRAVIS_BRANCH" == "staging" ]]; then
     export DOCKER_ENV=stage
-    export REACT_APP_USERS_SERVICE_URL="http://smabatreact-staging-alb-1712923849.us-east-1.elb.amazonaws.com"
+    export REACT_APP_USERS_SERVICE_URL="http://sbr-staging-alb-1020513120.us-west-1.elb.amazonaws.com"
   elif [[ "$TRAVIS_BRANCH" == "production" ]]; then
     export DOCKER_ENV=prod
   fi
@@ -18,7 +18,7 @@ then
     ./awscli-bundle/install -b ~/bin/aws
     export PATH=~/bin:$PATH
     # add AWS_ACCOUNT_ID, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY env vars
-    eval $(aws ecr get-login --region us-east-1 --no-include-email)
+    eval $(aws ecr get-login --region us-west-1 --no-include-email)
     export TAG=$TRAVIS_BRANCH
     export REPO=$AWS_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com
   fi
