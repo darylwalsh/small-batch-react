@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "http://54.183.120.197"
+      "url": "http://sbr-staging-alb-1020513120.us-west-1.elb.amazonaws.com"
     }
   ],
   "paths": {
