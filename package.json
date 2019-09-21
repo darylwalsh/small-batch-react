@@ -1,6 +1,6 @@
 {
   "name": "gitopsreact",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "react and flash based microservices",
   "scripts": {
     "commit": "git-cz",
