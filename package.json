@@ -1,7 +1,7 @@
 {
-  "name": "gitopsreact",
+  "name": "smallbatchreact",
   "version": "1.6.1",
-  "description": "react and flash based microservices",
+  "description": "react and flask based microservices",
   "scripts": {
     "commit": "git-cz",
     "test": "...",
