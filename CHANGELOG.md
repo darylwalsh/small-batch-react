@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.0](https://github.com/darylwalsh/small-batch-react/compare/v1.6.1...v1.7.0) (2019-09-21)
+
+
+### Bug Fixes
+
+* **package_json:** update package json ([4397336](https://github.com/darylwalsh/small-batch-react/commit/4397336))
+
+
+### Features
+
+* **ecs_tasks:** add ecs task definitions ([6c59543](https://github.com/darylwalsh/small-batch-react/commit/6c59543))
+
 ### [1.6.2](https://github.com/darylwalsh/small-batch-react/compare/v1.6.1...v1.6.2) (2019-09-21)
 
 
