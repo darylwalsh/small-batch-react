@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.0](https://github.com/darylwalsh/small-batch-react/compare/v1.5.0...v1.6.0) (2019-09-21)
+
+
+### Features
+
+* **ecr_images:** push docker images to ecr ([d941238](https://github.com/darylwalsh/small-batch-react/commit/d941238))
+
 ## [1.5.0](https://github.com/darylwalsh/small-batch-react/compare/v1.4.0...v1.5.0) (2019-09-20)
 
 
