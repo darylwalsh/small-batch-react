@@ -26,7 +26,7 @@ install:
   - npm i -g npm@6.9.0
   - npm ci
 before_script:
-  - export REACT_APP_USERS_SERVICE_URL="http://smabatreact-staging-alb-1712923849.us-east-1.elb.amazonaws.com"
+  - export REACT_APP_USERS_SERVICE_URL="http://sbr-staging-alb-1020513120.us-west-1.elb.amazonaws.com"
 script:
   - bash test-ci.sh $TRAVIS_BRANCH
 cache:
