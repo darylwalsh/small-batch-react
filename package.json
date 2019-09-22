@@ -1,7 +1,7 @@
 {
-  "name": "gitopsreact",
-  "version": "1.6.3",
-  "description": "react and flash based microservices",
+  "name": "smallbatchreact",
+  "version": "1.10.0",
+  "description": "react and flask based microservices",
   "scripts": {
     "commit": "git-cz",
     "test": "...",
@@ -13,7 +13,7 @@
     "prerelease": "git-authors-cli && git add .",
     "release": "standard-version -a",
     "postrelease": "run-s release:*",
-    "release:tags": "git push --follow-tags origin master",
+    "release:tags": "git push --follow-tags origin production",
     "release:github": "conventional-github-releaser -p angular",
     "ci:validate": "rm -rf node_modules && npm ci && npm run validate",
     "prepublishOnly": "npm run ci:validate && npm run build",
