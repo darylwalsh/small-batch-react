@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.10.0](https://github.com/darylwalsh/small-batch-react/compare/v1.9.0...v1.10.0) (2019-09-22)
+
+
+### Features
+
+* **aws_ecs:** add aws ecs production config ([fa8b0db](https://github.com/darylwalsh/small-batch-react/commit/fa8b0db))
+
 ## [1.9.0](https://github.com/darylwalsh/small-batch-react/compare/v1.8.2...v1.9.0) (2019-09-22)
 
 
