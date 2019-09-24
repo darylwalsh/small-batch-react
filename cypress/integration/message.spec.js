@@ -2,7 +2,7 @@ const randomstring = require('randomstring')
 
 const username = randomstring.generate()
 const email = `${username}@test.com`
-const password = 'greaterthanten'
+const password = 'Cypr3ssT3st!#'
 
 describe('Message', () => {
   it('should display flash messages correctly', () => {

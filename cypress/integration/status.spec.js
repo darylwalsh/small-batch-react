@@ -2,7 +2,7 @@ const randomstring = require('randomstring')
 
 const username = randomstring.generate()
 const email = `${username}@test.com`
-const password = 'greaterthanten'
+const password = 'Cypr3ssT3st!#'
 
 describe('Status', () => {
   it('should not display user info if a user is not logged in', () => {

@@ -2,13 +2,13 @@ const randomstring = require('randomstring')
 
 const username = randomstring.generate()
 const email = `${username}@test.com`
-const password = 'greaterthanten'
+const password = 'Cypr3ssT3st!#'
 
 describe('Index', () => {
   it('should display the page correctly if a user is not logged in', () => {
     cy.visit('/')
       .get('h1')
-      .contains('Exercises') // new
+      .contains('Exercises')
       .get('.navbar-burger')
       .click()
       .get('a')
@@ -24,9 +24,9 @@ describe('Index', () => {
       .get('a')
       .contains('Swagger')
       .get('a')
-      .contains('Users') // new
+      .contains('Users')
       .get('.notification.is-warning')
-      .contains('Please log in to submit an exercise.') // new
+      .contains('Please log in to submit an exercise.')
       .get('.notification.is-success')
       .should('not.be.visible')
   })
