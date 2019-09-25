@@ -32,6 +32,7 @@ before_script:
   - export REACT_APP_USERS_SERVICE_URL=http://127.0.0.1
   - export REACT_APP_EXERCISES_SERVICE_URL=http://127.0.0.1  
   - export REACT_APP_API_GATEWAY_URL=${REACT_APP_API_GATEWAY_URL}  
+  - export LOAD_BALANCER_STAGE_DNS_NAME=http://sbr-staging-alb-1020513120.us-west-1.elb.amazonaws.com
   - npm install
 
 script:
