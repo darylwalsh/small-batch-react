@@ -14,7 +14,7 @@ terraform/*
 /terraform/*
 terraform/**/*/
 /terraform/**/*/
-
+.jest/*
 node_modules
 node_modules/
 node_modules/*
@@ -27,3 +27,7 @@ node_modules/*
 terraform.tfvars
 /**/*/terraform.tfvars
 dockerstatus.txt
+.jest
+.jest/
+/.jest/
+/.jest/*
