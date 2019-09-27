@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.15.0](https://github.com/darylwalsh/small-batch-react/compare/v1.14.0...v1.15.0) (2019-09-27)
+
+
+### Features
+
+* **prop_types:** add prop_types to react client ([94c90bd](https://github.com/darylwalsh/small-batch-react/commit/94c90bd))
+
 ## [1.14.0](https://github.com/darylwalsh/small-batch-react/compare/v1.13.0...v1.14.0) (2019-09-26)
 
 
