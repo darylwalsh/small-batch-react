@@ -21,7 +21,11 @@ server() {
   inspect $? exercises
   docker-compose exec exercises flake8 project
   inspect $? exercises-lint
-  docker-compose down
+  docker-compose exec scores python manage.py test
+  inspect $? scores
+  docker-compose exec scores flake8 project
+  inspect $? scores-lint
+  docker-compose down 
 }
 
 
@@ -53,6 +57,10 @@ all() {
   inspect $? exercises
   docker-compose exec exercises flake8 project
   inspect $? exercises-lint
+  docker-compose exec scores python manage.py test
+  inspect $? scores
+  docker-compose exec scores flake8 project
+  inspect $? scores-lint
   docker-compose exec client npm test -- --coverage
   inspect $? client
   docker-compose down
