@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.17.0](https://github.com/darylwalsh/small-batch-react/compare/v1.16.1...v1.17.0) (2019-09-28)
+
+
+### Features
+
+* **exercises_refactor:** refactor exercises view components ([856913c](https://github.com/darylwalsh/small-batch-react/commit/856913c))
+
 ### [1.16.1](https://github.com/darylwalsh/small-batch-react/compare/v1.16.0...v1.16.1) (2019-09-28)
 
 ## [1.16.0](https://github.com/darylwalsh/small-batch-react/compare/v1.15.0...v1.16.0) (2019-09-28)
