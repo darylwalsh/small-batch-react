@@ -19,3 +19,4 @@ dockerstatus.txt
 .vscode
 .jest/
 .vscode/
+yarn-error.log
