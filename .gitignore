@@ -12,5 +12,10 @@ node_modules/*
 env
 .env
 users/htmlcov/
+services/users/htmlcov/
 XDG_CACHE_HOME/*
 dockerstatus.txt
+.jest
+.vscode
+.jest/
+.vscode/

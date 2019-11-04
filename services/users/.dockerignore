@@ -2,3 +2,5 @@ env
 .dockerignore
 Dockerfile-dev
 Dockerfile-prod
+users/htmlcov
+services/users/htmlcov/index.html
