@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # sudo: required
 # services:
 #   - docker
@@ -17,6 +18,52 @@
 #   SWAGGER_REPO: '${MAIN_REPO}#${TRAVIS_BRANCH}:services/swagger'
 #   SECRET_KEY: my_precious
 
+=======
+language: node_js
+sudo: required
+services:
+  - docker
+env:
+  CI: true
+  NODE_ENV: test
+  DOCKER_COMPOSE_VERSION: 1.23.2
+  COMMIT: '${TRAVIS_COMMIT::8}'
+  MAIN_REPO: https://github.com/darylwalsh/small-batch-react.git
+  USERS: sbr-users
+  USERS_REPO: '${MAIN_REPO}#${TRAVIS_BRANCH}:services/users'
+  USERS_DB: sbr-users_db
+  USERS_DB_REPO: '${MAIN_REPO}#${TRAVIS_BRANCH}:services/users/project/db'
+  CLIENT: sbr-client
+  CLIENT_REPO: '${MAIN_REPO}#${TRAVIS_BRANCH}:services/client'
+  SWAGGER: sbr-swagger
+  SWAGGER_REPO: '${MAIN_REPO}#${TRAVIS_BRANCH}:services/swagger'
+  EXERCISES: test-driven-exercises  
+  EXERCISES_REPO: ${MAIN_REPO}#${TRAVIS_BRANCH}:services/exercises  
+  EXERCISES_DB: test-driven-exercises_db  
+  EXERCISES_DB_REPO: ${MAIN_REPO}#${TRAVIS_BRANCH}:services/exercises/project/db  
+  SECRET_KEY: sbr_key
+
+before_install:
+  - sudo rm /usr/local/bin/docker-compose
+  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+  - chmod +x docker-compose
+  - sudo mv docker-compose /usr/local/bin
+
+before_script:
+  - export REACT_APP_USERS_SERVICE_URL=http://127.0.0.1
+  - export REACT_APP_EXERCISES_SERVICE_URL=http://127.0.0.1  
+  - export REACT_APP_API_GATEWAY_URL=${REACT_APP_API_GATEWAY_URL}  
+  - export LOAD_BALANCER_STAGE_DNS_NAME=http://sbr-staging-alb-1020513120.us-west-1.elb.amazonaws.com
+  - npm install
+
+script:
+  - bash test-ci.sh $TRAVIS_BRANCH
+
+after_success:
+  - bash ./docker-push.sh
+  - bash ./docker-deploy-stage.sh
+  - bash ./docker-deploy-prod.sh
+>>>>>>> bfc/master
 # before_install:
 #   - sudo rm /usr/local/bin/docker-compose
 #   - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
@@ -26,7 +73,11 @@
 #   - npm i -g npm@6.9.0
 #   - npm ci
 # before_script:
+<<<<<<< HEAD
 #   - export REACT_APP_USERS_SERVICE_URL=http://127.0.0.1
+=======
+#   - export REACT_APP_USERS_SERVICE_URL="http://sbr-staging-alb-1020513120.us-west-1.elb.amazonaws.com"
+>>>>>>> bfc/master
 # script:
 #   - bash test-ci.sh $TRAVIS_BRANCH
 # cache:
@@ -38,7 +89,11 @@
 #     - ~/.cache
 # after_success:
 #   - bash ./docker-push.sh
+<<<<<<< HEAD
 # # TODO: pull images from ECR cache
 # # https://semaphoreci.com/docs/docker/docker-layer-caching.html
 # # https://userlinux.net/how-publish-docker-images-ecr.html
 # # https://github.com/travis-ci/travis-ci/issues/5358#issuecomment-290139438
+=======
+#   - bash ./docker-deploy-stage.sh  
+>>>>>>> bfc/master

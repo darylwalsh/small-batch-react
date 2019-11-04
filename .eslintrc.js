@@ -2,10 +2,11 @@ module.exports = {
   env: {
     es6: true,
     browser: true,
-    node: true
+    node: true,
+    jest: true
   },
-  extends: ['plugin:jest/recommended', 'jest-enzyme'],
-  plugins: ['babel', 'import', 'jsx-a11y', 'react', 'prettier'],
+  extends: ['plugin:jest/recommended'],
+  plugins: ['babel', 'import', 'jsx-a11y','jest', 'react', 'prettier'],
   parser: 'babel-eslint',
   parserOptions: {
     ecmaVersion: 6,
