@@ -8,7 +8,7 @@ class BaseConfig:
     """Base configuration"""
     TESTING = False
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    SECRET_KEY = 'my_precious'
+    SECRET_KEY = 'sbr_h00r000sh'
 
 
 class DevelopmentConfig(BaseConfig):
