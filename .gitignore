@@ -31,3 +31,4 @@ dockerstatus.txt
 .jest/
 /.jest/
 /.jest/*
+ansible/
