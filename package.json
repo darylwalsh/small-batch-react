@@ -1,7 +1,8 @@
 {
   "name": "smallbatchreact",
-  "version": "1.17.2",
+  "version": "1.17.3",
   "description": "react and flask based microservices",
+  "repository": "git@github.com:daryl-walsh/small-batch-react.git",
   "scripts": {
     "commit": "git-cz",
     "test": "...",
