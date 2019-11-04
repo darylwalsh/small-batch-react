@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.17.1](https://dmw///compare/v1.17.0...v1.17.1) (2019-11-04)
+
+
+### Bug Fixes
+
+* **merge:** reconcile fork repo ([617e2df](https://dmw///commit/617e2df))
+
 ## [1.17.0](https://github.com/darylwalsh/small-batch-react/compare/v1.16.1...v1.17.0) (2019-09-28)
 
 
