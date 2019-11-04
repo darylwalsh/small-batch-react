@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.18.0](https://github.com/daryl-walsh/small-batch-react/compare/v1.17.12...v1.18.0) (2019-11-04)
+
+
+### Features
+
+* **flash_toolbar:** add flask degbug toolbar ([9d495c9](https://github.com/daryl-walsh/small-batch-react/commit/9d495c9))
+
 ### [1.17.12](https://github.com/daryl-walsh/small-batch-react/compare/v1.17.11...v1.17.12) (2019-11-04)
 
 ### [1.17.11](https://github.com/daryl-walsh/small-batch-react/compare/v1.17.10...v1.17.11) (2019-11-04)
