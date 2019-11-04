@@ -19,18 +19,12 @@ class TestDevelopmentConfig(TestCase):
         return app
 
     def test_app_is_development(self):
-        self.assertEqual(
-            app.config['SECRET_KEY'], os.environ.get('SECRET_KEY')
-        )
+        self.assertTrue(app.config['SECRET_KEY'] == 'my_precious')
         self.assertFalse(current_app is None)
         self.assertTrue(
             app.config['SQLALCHEMY_DATABASE_URI'] ==
             os.environ.get('DATABASE_URL')
         )
-        self.assertTrue(app.config['DEBUG_TB_ENABLED'])
-        self.assertTrue(app.config['BCRYPT_LOG_ROUNDS'] == 4)
-        self.assertTrue(app.config['TOKEN_EXPIRATION_DAYS'] == 30)
-        self.assertTrue(app.config['TOKEN_EXPIRATION_SECONDS'] == 0)
 
 
 class TestTestingConfig(TestCase):
@@ -39,19 +33,13 @@ class TestTestingConfig(TestCase):
         return app
 
     def test_app_is_testing(self):
-        self.assertEqual(
-            app.config['SECRET_KEY'], os.environ.get('SECRET_KEY')
-        )
+        self.assertTrue(app.config['SECRET_KEY'] == 'my_precious')
         self.assertTrue(app.config['TESTING'])
         self.assertFalse(app.config['PRESERVE_CONTEXT_ON_EXCEPTION'])
         self.assertTrue(
             app.config['SQLALCHEMY_DATABASE_URI'] ==
             os.environ.get('DATABASE_TEST_URL')
         )
-        self.assertFalse(app.config['DEBUG_TB_ENABLED'])
-        self.assertTrue(app.config['BCRYPT_LOG_ROUNDS'] == 4)
-        self.assertTrue(app.config['TOKEN_EXPIRATION_DAYS'] == 0)
-        self.assertTrue(app.config['TOKEN_EXPIRATION_SECONDS'] == 3)
 
 
 class TestProductionConfig(TestCase):
@@ -60,14 +48,8 @@ class TestProductionConfig(TestCase):
         return app
 
     def test_app_is_production(self):
-        self.assertEqual(
-            app.config['SECRET_KEY'], os.environ.get('SECRET_KEY')
-        )
+        self.assertTrue(app.config['SECRET_KEY'] == 'my_precious')
         self.assertFalse(app.config['TESTING'])
-        self.assertFalse(app.config['DEBUG_TB_ENABLED'])
-        self.assertTrue(app.config['BCRYPT_LOG_ROUNDS'] == 13)
-        self.assertTrue(app.config['TOKEN_EXPIRATION_DAYS'] == 30)
-        self.assertTrue(app.config['TOKEN_EXPIRATION_SECONDS'] == 0)
 
 
 if __name__ == '__main__':
