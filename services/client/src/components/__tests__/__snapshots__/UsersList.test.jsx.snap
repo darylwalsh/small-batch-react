@@ -5,12 +5,12 @@ exports[`UsersList renders a snapshot properly 1`] = `
   <h4
     className="box title is-4"
   >
-    michael
+    daryl
   </h4>
   <h4
     className="box title is-4"
   >
-    michaelherman
+    darylblpc
   </h4>
 </div>
 `;
