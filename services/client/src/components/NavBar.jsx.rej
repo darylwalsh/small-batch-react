@@ -1,0 +1,68 @@
+diff a/services/client/src/components/NavBar.jsx b/services/client/src/components/NavBar.jsx	(rejected hunks)
+@@ -1,2 +1,2 @@
+-import React from 'react';
+-import { Link } from 'react-router-dom';
++import React from 'react'
++import { Link } from 'react-router-dom'
+@@ -4 +4 @@ import { Link } from 'react-router-dom';
+-const NavBar = (props) => (
++const NavBar = props => (
+@@ -6 +6,4 @@ const NavBar = (props) => (
+-  <nav className="navbar is-dark" role="navigation" aria-label="main navigation">
++  <nav
++    className="navbar is-dark"
++    role="navigation"
++    aria-label="main navigation">
+@@ -13,3 +16,4 @@ const NavBar = (props) => (
+-            let toggle = document.querySelector(".nav-toggle");
+-            let menu = document.querySelector(".navbar-menu");
+-            toggle.classList.toggle("is-active"); menu.classList.toggle("is-active");
++            let toggle = document.querySelector('.nav-toggle')
++            let menu = document.querySelector('.navbar-menu')
++            toggle.classList.toggle('is-active')
++            menu.classList.toggle('is-active')
+@@ -24,5 +28,11 @@ const NavBar = (props) => (
+-          <Link to="/" className="navbar-item">Home</Link>
+-          <Link to="/about" className="navbar-item">About</Link>
+-          {props.isAuthenticated &&
+-            <Link to="/status" className="navbar-item">User Status</Link>
+-          }
++          <Link to="/" className="navbar-item">
++            Home
++          </Link>
++          <Link to="/about" className="navbar-item">
++            About
++          </Link>
++          {props.isAuthenticated && (
++            <Link to="/status" className="navbar-item">
++              User Status
++            </Link>
++          )}
+@@ -31,9 +41,15 @@ const NavBar = (props) => (
+-          {!props.isAuthenticated &&
+-            <Link to="/register" className="navbar-item">Register</Link>
+-          }
+-          {!props.isAuthenticated &&
+-            <Link to="/login" className="navbar-item">Log In</Link>
+-          }
+-          {props.isAuthenticated &&
+-            <Link to="/logout" className="navbar-item">Log Out</Link>
+-          }
++          {!props.isAuthenticated && (
++            <Link to="/register" className="navbar-item">
++              Register
++            </Link>
++          )}
++          {!props.isAuthenticated && (
++            <Link to="/login" className="navbar-item">
++              Log In
++            </Link>
++          )}
++          {props.isAuthenticated && (
++            <Link to="/logout" className="navbar-item">
++              Log Out
++            </Link>
++          )}
+@@ -46 +62 @@ const NavBar = (props) => (
+-export default NavBar;
++export default NavBar

@@ -8,6 +8,12 @@ import NavBar from './components/NavBar'
 import Form from './components/Form'
 import Logout from './components/Logout'
 import UserStatus from './components/UserStatus'
+import UsersList from './components/UsersList'
+import About from './components/About'
+import NavBar from './components/NavBar'
+import Form from './components/Form'
+import Logout from './components/Logout'
+import UserStatus from './components/UserStatus'
 
 class App extends Component {
   constructor() {

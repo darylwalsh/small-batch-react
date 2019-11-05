@@ -1,0 +1,42 @@
+diff a/services/client/src/components/__tests__/NavBar.test.jsx b/services/client/src/components/__tests__/NavBar.test.jsx	(rejected hunks)
+@@ -1,4 +1,4 @@
+-import React from 'react';
+-import { shallow } from 'enzyme';
+-import renderer from 'react-test-renderer';
+-import { MemoryRouter as Router } from 'react-router-dom';
++import React from 'react'
++import { shallow } from 'enzyme'
++import renderer from 'react-test-renderer'
++import { MemoryRouter as Router } from 'react-router-dom'
+@@ -6 +6 @@ import { MemoryRouter as Router } from 'react-router-dom';
+-import NavBar from '../NavBar';
++import NavBar from '../NavBar'
+@@ -8 +8 @@ import NavBar from '../NavBar';
+-const title = 'Hello, World!';
++const title = 'Hello, World!'
+@@ -11,5 +11,5 @@ test('NavBar renders properly', () => {
+-  const wrapper = shallow(<NavBar title={title}/>);
+-  const element = wrapper.find('strong');
+-  expect(element.length).toBe(1);
+-  expect(element.get(0).props.children).toBe(title);
+-});
++  const wrapper = shallow(<NavBar title={title} />)
++  const element = wrapper.find('strong')
++  expect(element.length).toBe(1)
++  expect(element.get(0).props.children).toBe(title)
++})
+@@ -18,5 +18,9 @@ test('NavBar renders a snapshot properly', () => {
+-  const tree = renderer.create(
+-    <Router location="/"><NavBar title={title}/></Router>
+-  ).toJSON();
+-  expect(tree).toMatchSnapshot();
+-});
++  const tree = renderer
++    .create(
++      <Router location="/">
++        <NavBar title={title} />
++      </Router>
++    )
++    .toJSON()
++  expect(tree).toMatchSnapshot()
++})

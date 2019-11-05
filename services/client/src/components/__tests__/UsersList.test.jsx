@@ -10,14 +10,14 @@ const users = [
     admin: false,
     email: 'hermanmu@gmail.com',
     id: 1,
-    username: 'michael',
+    username: 'daryl',
   },
   {
     active: true,
     admin: false,
-    email: 'michael@mherman.org',
+    email: 'daryl@blpc.us',
     id: 2,
-    username: 'michaelherman',
+    username: 'darylblpc',
   },
 ]
 
@@ -43,7 +43,7 @@ test('UsersList renders properly', () => {
   expect(td.length).toBe(10)
   expect(td.get(0).props.children).toBe(1)
   expect(td.get(1).props.children).toBe('hermanmu@gmail.com')
-  expect(td.get(2).props.children).toBe('michael')
+  expect(td.get(2).props.children).toBe('daryl')
   expect(td.get(3).props.children).toBe('true')
   expect(td.get(4).props.children).toBe('false')
 })

@@ -36,14 +36,14 @@ def recreate_db():
 def seed_db():
     """Seeds the database."""
     db.session.add(User(
-        username='michael',
-        email='michael@reallynotreal.com',
-        password='greaterthaneight'
+        username='daryl',
+        email='daryl@testdomain.com',
+        password='sbrhooroosh187'
     ))
     db.session.add(User(
-        username='michaelherman',
-        email='michael@mherman.org',
-        password='greaterthaneight'
+        username='darylblpc',
+        email='daryl@blpc.us',
+        password='sbrhooroosh187'
     ))
     db.session.commit()
 

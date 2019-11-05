@@ -1,0 +1,38 @@
+diff a/services/client/src/components/Form.jsx b/services/client/src/components/Form.jsx	(rejected hunks)
+@@ -1,2 +1,2 @@
+-import React from 'react';
+-import { Redirect } from 'react-router-dom';
++import React from 'react'
++import { Redirect } from 'react-router-dom'
+@@ -4 +4 @@ import { Redirect } from 'react-router-dom';
+-const Form = (props) => {
++const Form = props => {
+@@ -6 +6 @@ const Form = (props) => {
+-    return <Redirect to='/' />;
++    return <Redirect to="/" />
+@@ -10,4 +10,2 @@ const Form = (props) => {
+-      {props.formType === 'Login' &&
+-        <h1 className="title is-1">Log In</h1>
+-      }
+-      {props.formType === 'Register' &&
++      {props.formType === 'Login' && <h1 className="title is-1">Log In</h1>}
++      {props.formType === 'Register' && (
+@@ -15,4 +13,5 @@ const Form = (props) => {
+-      }
+-      <hr/><br/>
+-      <form onSubmit={(event) => props.handleUserFormSubmit(event)}>
+-        {props.formType === 'Register' &&
++      )}
++      <hr />
++      <br />
++      <form onSubmit={event => props.handleUserFormSubmit(event)}>
++        {props.formType === 'Register' && (
+@@ -30 +29 @@ const Form = (props) => {
+-        }
++        )}
+@@ -61 +60 @@ const Form = (props) => {
+-};
++}
+@@ -63 +62 @@ const Form = (props) => {
+-export default Form;
++export default Form

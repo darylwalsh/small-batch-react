@@ -1,0 +1,25 @@
+diff a/services/client/src/components/Logout.jsx b/services/client/src/components/Logout.jsx	(rejected hunks)
+@@ -1,2 +1,2 @@
+-import React, { Component } from 'react';
+-import { Link } from 'react-router-dom';
++import React, { Component } from 'react'
++import { Link } from 'react-router-dom'
+@@ -6,2 +6,2 @@ class Logout extends Component {
+-    this.props.logoutUser();
+-  };
++    this.props.logoutUser()
++  }
+@@ -11 +11,4 @@ class Logout extends Component {
+-        <p>You are now logged out. Click <Link to="/login">here</Link> to log back in.</p>
++        <p>
++          You are now logged out. Click <Link to="/login">here</Link> to log
++          back in.
++        </p>
+@@ -14,2 +17,2 @@ class Logout extends Component {
+-  };
+-};
++  }
++}
+@@ -17 +20 @@ class Logout extends Component {
+-export default Logout;
++export default Logout

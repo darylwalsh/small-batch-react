@@ -1,0 +1,16 @@
+diff a/services/client/src/components/AddUser.jsx b/services/client/src/components/AddUser.jsx	(rejected hunks)
+@@ -1 +1 @@
+-import React from 'react';
++import React from 'react'
+@@ -3 +3 @@ import React from 'react';
+-const AddUser = (props) => {
++const AddUser = props => {
+@@ -5 +5 @@ const AddUser = (props) => {
+-    <form onSubmit={(event) => props.addUser(event)}>
++    <form onSubmit={event => props.addUser(event)}>
+@@ -35 +35 @@ const AddUser = (props) => {
+-};
++}
+@@ -37 +37 @@ const AddUser = (props) => {
+-export default AddUser;
++export default AddUser

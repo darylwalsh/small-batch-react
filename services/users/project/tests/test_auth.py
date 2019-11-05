@@ -38,7 +38,7 @@ class TestAuthBlueprint(BaseTestCase):
             response = self.client.post(
                 '/auth/register',
                 data=json.dumps({
-                    'username': 'michael',
+                    'username': 'daryl',
                     'email': 'test@test.com',
                     'password': 'test'
                 }),
