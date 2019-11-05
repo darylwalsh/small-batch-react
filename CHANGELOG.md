@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.20.0](https://github.com/daryl-walsh/small-batch-react/compare/v1.19.0...v1.20.0) (2019-11-05)
+
+
+### Bug Fixes
+
+* **pkg.json:** update git branch ([7e4c830](https://github.com/daryl-walsh/small-batch-react/commit/7e4c830))
+* **update files:** file update ([e50cebe](https://github.com/daryl-walsh/small-batch-react/commit/e50cebe))
+
+
+### Features
+
+* **jwt_auth:** add jwt auth routing ([c0ded8a](https://github.com/daryl-walsh/small-batch-react/commit/c0ded8a))
+
 ## [1.19.0](https://github.com/daryl-walsh/small-batch-react/compare/v1.18.0...v1.19.0) (2019-11-05)
 
 
