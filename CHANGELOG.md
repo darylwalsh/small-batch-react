@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.19.0](https://github.com/daryl-walsh/small-batch-react/compare/v1.18.0...v1.19.0) (2019-11-05)
+
+
+### Bug Fixes
+
+* **package.json:** update package.json ([a364ef3](https://github.com/daryl-walsh/small-batch-react/commit/a364ef3))
+
+
+### Features
+
+* **react_frontend:** add reactjs gui ([f149f7f](https://github.com/daryl-walsh/small-batch-react/commit/f149f7f))
+
 ## [1.18.0](https://github.com/daryl-walsh/small-batch-react/compare/v1.17.12...v1.18.0) (2019-11-04)
 
 
