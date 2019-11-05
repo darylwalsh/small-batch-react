@@ -36,13 +36,13 @@ def recreate_db():
 def seed_db():
     """Seeds the database."""
     db.session.add(User(
-        username='michael',
-        email='michael@reallynotreal.com',
+        username='daryl',
+        email='daryl@testdomain.com',
         password='greaterthaneight'
     ))
     db.session.add(User(
-        username='michaelherman',
-        email='michael@mherman.org',
+        username='darylblpc',
+        email='gitopsreact@blpc.us',
         password='greaterthaneight'
     ))
     db.session.commit()

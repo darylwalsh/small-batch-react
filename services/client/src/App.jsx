@@ -16,7 +16,7 @@ class App extends Component {
       users: [],
       username: '',
       email: '',
-      title: 'TestDriven.io',
+      title: 'smallbatchreact.io',
       formData: {
         username: '',
         email: '',
