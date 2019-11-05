@@ -1,9 +1,0 @@
-diff a/services/client/src/setupTests.js b/services/client/src/setupTests.js	(rejected hunks)
-@@ -1,2 +1,2 @@
--import { configure } from 'enzyme';
--import Adapter from 'enzyme-adapter-react-16';
-+import { configure } from 'enzyme'
-+import Adapter from 'enzyme-adapter-react-16'
-@@ -4 +4 @@ import Adapter from 'enzyme-adapter-react-16';
--configure({ adapter: new Adapter() });
-+configure({ adapter: new Adapter() })
