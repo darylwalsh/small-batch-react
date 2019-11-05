@@ -1,5 +1,11 @@
 
 __pycache__
+__pycache__/
+__pycache__/*
+/__pycache__/*
+/**/*/__pycache__/*
+services/users/project/api/__pycache__/
+services/users/project/__pycache__/
 node_modules
 node_modules/
 node_modules/*
