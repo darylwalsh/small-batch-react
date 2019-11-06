@@ -28,3 +28,6 @@ dockerstatus.txt
 .jest/
 .vscode/
 yarn-error.log
+.jest/*
+.jest/cache/
+.jest/cache/*
