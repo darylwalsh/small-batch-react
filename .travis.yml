@@ -29,7 +29,8 @@ before_script:
   - npx cypress install
 
 script:
-  - bash test.sh stage
+  - bash test-ci.sh $TRAVIS_BRANCH
+  #- bash test.sh stage
 
 after_script:
   - docker-compose down
