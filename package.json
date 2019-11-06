@@ -1,6 +1,6 @@
 {
   "name": "smallbatchreact",
-  "version": "1.23.2",
+  "version": "1.23.3",
   "description": "react and flask based microservices",
   "repository": "git@github.com:daryl-walsh/small-batch-react.git",
   "scripts": {
@@ -14,7 +14,7 @@
     "prerelease": "git-authors-cli && git add .",
     "release": "standard-version -a",
     "postrelease": "run-s release:*",
-    "release:tags": "git push --follow-tags origin cypress",
+    "release:tags": "git push --follow-tags origin terraform",
     "release:github": "conventional-github-releaser -p angular",
     "ci:validate": "rm -rf node_modules && npm ci && npm run validate",
     "prepublishOnly": "npm run ci:validate && npm run build",
