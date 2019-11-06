@@ -15,7 +15,7 @@ env:
   CLIENT_REPO: ${MAIN_REPO}#${TRAVIS_BRANCH}:services/client
   SWAGGER: sbr-swagger
   SWAGGER_REPO: ${MAIN_REPO}#${TRAVIS_BRANCH}:services/swagger
-  SECRET_KEY: sbr_hooroosh
+  SECRET_KEY: d99423f260dd3cf8de3cadb173f20c2dac40046fffb3f4af
 
 before_install:
   - sudo rm /usr/local/bin/docker-compose
