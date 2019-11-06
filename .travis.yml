@@ -5,6 +5,17 @@ services:
 
 env:
   DOCKER_COMPOSE_VERSION: 1.23.2
+  COMMIT: ${TRAVIS_COMMIT::8}
+  MAIN_REPO: https://github.com/daryl-walsh/small-batch-react.git
+  USERS: sbr-users
+  USERS_REPO: ${MAIN_REPO}#${TRAVIS_BRANCH}:services/users
+  USERS_DB: sbr-users_db
+  USERS_DB_REPO: ${MAIN_REPO}#${TRAVIS_BRANCH}:services/users/project/db
+  CLIENT: sbr-client
+  CLIENT_REPO: ${MAIN_REPO}#${TRAVIS_BRANCH}:services/client
+  SWAGGER: sbr-swagger
+  SWAGGER_REPO: ${MAIN_REPO}#${TRAVIS_BRANCH}:services/swagger
+  SECRET_KEY: sbr_hooroosh
 
 before_install:
   - sudo rm /usr/local/bin/docker-compose
@@ -22,3 +33,6 @@ script:
 
 after_script:
   - docker-compose down
+
+after_success:
+  - bash ./docker-push.sh
