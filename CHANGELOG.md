@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.23.0](https://github.com/daryl-walsh/small-batch-react/compare/v1.22.1...v1.23.0) (2019-11-06)
+
+
+### Features
+
+* **swagger:** add swagger api docs ([a8e80bc](https://github.com/daryl-walsh/small-batch-react/commit/a8e80bc))
+
 ### [1.22.1](https://github.com/daryl-walsh/small-batch-react/compare/v1.22.0...v1.22.1) (2019-11-06)
 
 ## [1.22.0](https://github.com/daryl-walsh/small-batch-react/compare/v1.21.1...v1.22.0) (2019-11-06)
