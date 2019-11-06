@@ -1,7 +1,6 @@
 version: '3.7'
 
 services:
-
   users:
     build:
       context: ./services/users
@@ -35,8 +34,19 @@ services:
       args:
         - NODE_ENV=production
         - REACT_APP_USERS_SERVICE_URL=${REACT_APP_USERS_SERVICE_URL}
-    ports:
-      - '3007:80'
+    expose:
+      - 80
+    depends_on:
+      - users
+
+  swagger:
+    build:
+      context: ./services/swagger
+      dockerfile: Dockerfile-prod
+    expose:
+      - 8080
+    environment:
+      - URL=swagger.json
     depends_on:
       - users
 
