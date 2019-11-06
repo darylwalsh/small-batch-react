@@ -66,6 +66,7 @@ class App extends Component {
       messageType: null,
     })
   }
+
   render() {
     return (
       <div>

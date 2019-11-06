@@ -9,7 +9,7 @@
     "build": "...",
     "lint": "eslint src/**",
     "styleguide:build": "...",
-    "prettier:check": "prettier --check 'services/client/src/**/*.{js,ts,tsx,js,mdx}'",
+    "prettier:check": "prettier --check 'services/client/src/**/*.{js,ts,tsx,js}'",
     "validate": "run-s test lint prettier:check",
     "prerelease": "git-authors-cli && git add .",
     "release": "standard-version -a",
@@ -105,7 +105,7 @@
       "prettier --write",
       "git add"
     ],
-    "services/client/src/**/*.{js,jsx,css,ts,tsx,md}": [
+    "services/client/src/**/*.{js,jsx,ts,tsx}": [
       "prettier --write",
       "eslint --fix",
       "git add"
