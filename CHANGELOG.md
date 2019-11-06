@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.21.0](https://github.com/daryl-walsh/small-batch-react/compare/v1.20.2...v1.21.0) (2019-11-06)
+
+
+### Features
+
+* **cypress-setup:** setup skeleton cypress testing ([3e02a42](https://github.com/daryl-walsh/small-batch-react/commit/3e02a42))
+
 ### [1.20.2](https://github.com/daryl-walsh/small-batch-react/compare/v1.20.1...v1.20.2) (2019-11-06)
 
 
