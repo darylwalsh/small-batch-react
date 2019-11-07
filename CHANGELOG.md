@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.23.14](https://github.com/daryl-walsh/small-batch-react/compare/v1.23.13...v1.23.14) (2019-11-07)
+
 ### [1.23.13](https://github.com/daryl-walsh/small-batch-react/compare/v1.23.12...v1.23.13) (2019-11-07)
 
 ### [1.23.12](https://github.com/daryl-walsh/small-batch-react/compare/v1.23.11...v1.23.12) (2019-11-06)
