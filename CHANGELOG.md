@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.24.0](https://github.com/daryl-walsh/small-batch-react/compare/v1.23.17...v1.24.0) (2019-11-07)
+
+
+### Features
+
+* **aws_prod:** add aws ecs cluster for prod ([3799858](https://github.com/daryl-walsh/small-batch-react/commit/3799858))
+
 ### [1.23.17](https://github.com/daryl-walsh/small-batch-react/compare/v1.23.16...v1.23.17) (2019-11-07)
 
 ### [1.23.16](https://github.com/daryl-walsh/small-batch-react/compare/v1.23.15...v1.23.16) (2019-11-07)
