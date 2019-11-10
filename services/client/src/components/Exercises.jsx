@@ -68,9 +68,8 @@ class Exercises extends Component {
             <h5 className="title is-5">{this.state.exercises[0].body}</h5>
             <AceEditor
               mode="python"
-              theme="monokai"
+              theme="solarized_dark"
               name={this.state.exercises[0].id.toString()}
-              keybinding="vim"
               onLoad={this.onLoad}
               fontSize={14}
               height={'175px'}
