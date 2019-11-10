@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.25.1](https://github.com/daryl-walsh/small-batch-react/compare/v1.25.0...v1.25.1) (2019-11-08)
+
+## [1.25.0](https://github.com/daryl-walsh/small-batch-react/compare/v1.24.0...v1.25.0) (2019-11-08)
+
+
+### Features
+
+* **exercises:** add exercises gui/db ([8695fa2](https://github.com/daryl-walsh/small-batch-react/commit/8695fa2))
+
 ## [1.24.0](https://github.com/daryl-walsh/small-batch-react/compare/v1.23.17...v1.24.0) (2019-11-07)
 
 

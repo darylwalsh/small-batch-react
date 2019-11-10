@@ -4,11 +4,13 @@ import axios from 'axios'
 
 import UsersList from './components/UsersList'
 import About from './components/About'
+import Exercises from './components/Exercises'
 import NavBar from './components/NavBar'
 import Form from './components/forms/Form'
 import Logout from './components/Logout'
 import UserStatus from './components/UserStatus'
 import Message from './components/Message'
+import Footer from './components/Footer'
 
 class App extends Component {
   constructor() {
@@ -90,9 +92,16 @@ class App extends Component {
                   <Route
                     exact
                     path="/"
-                    render={() => <UsersList users={this.state.users} />}
+                    render={() => (
+                      <Exercises isAuthenticated={this.state.isAuthenticated} />
+                    )}
                   />
                   <Route exact path="/about" component={About} />
+                  <Route
+                    exact
+                    path="/all-users"
+                    render={() => <UsersList users={this.state.users} />}
+                  />
                   <Route
                     exact
                     path="/register"
@@ -141,6 +150,7 @@ class App extends Component {
             </div>
           </div>
         </section>
+        <Footer />
       </div>
     )
   }
