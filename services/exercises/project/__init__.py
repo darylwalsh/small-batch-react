@@ -1,5 +1,6 @@
 # services/exercises/project/__init__.py
 
+
 import os
 
 from flask import Flask
@@ -37,6 +38,8 @@ def create_app(script_info=None):
     # register blueprints
     from project.api.base import base_blueprint
     app.register_blueprint(base_blueprint)
+    from project.api.exercises import exercises_blueprint
+    app.register_blueprint(exercises_blueprint)
 
     # shell context for flask cli
     @app.shell_context_processor
