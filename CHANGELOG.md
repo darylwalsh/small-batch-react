@@ -2,6 +2,47 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.27.0](https://github.com/daryl-walsh/small-batch-react/compare/v1.26.4...v1.27.0) (2019-11-10)
+
+
+### Features
+
+* **aws_exercises:** add aws ecr for exercises ([8af1139](https://github.com/daryl-walsh/small-batch-react/commit/8af1139))
+
+### [1.26.4](https://github.com/daryl-walsh/small-batch-react/compare/v1.26.3...v1.26.4) (2019-11-10)
+
+
+### Bug Fixes
+
+* **jest:** update jest snapshot ([387ed3b](https://github.com/daryl-walsh/small-batch-react/commit/387ed3b))
+
+### [1.26.3](https://github.com/daryl-walsh/small-batch-react/compare/v1.26.2...v1.26.3) (2019-11-10)
+
+### [1.26.2](https://github.com/daryl-walsh/small-batch-react/compare/v1.26.1...v1.26.2) (2019-11-10)
+
+
+### Bug Fixes
+
+* **requirements.txt:** force add requirements.txt ([7be9edd](https://github.com/daryl-walsh/small-batch-react/commit/7be9edd))
+
+### [1.26.1](https://github.com/daryl-walsh/small-batch-react/compare/v1.26.0...v1.26.1) (2019-11-10)
+
+## [1.26.0](https://github.com/daryl-walsh/small-batch-react/compare/v1.25.1...v1.26.0) (2019-11-10)
+
+
+### Features
+
+* **exercises:** add exercises components ([5023b46](https://github.com/daryl-walsh/small-batch-react/commit/5023b46))
+
+### [1.25.1](https://github.com/daryl-walsh/small-batch-react/compare/v1.25.0...v1.25.1) (2019-11-08)
+
+## [1.25.0](https://github.com/daryl-walsh/small-batch-react/compare/v1.24.0...v1.25.0) (2019-11-08)
+
+
+### Features
+
+* **exercises:** add exercises gui/db ([8695fa2](https://github.com/daryl-walsh/small-batch-react/commit/8695fa2))
+
 ## [1.24.0](https://github.com/daryl-walsh/small-batch-react/compare/v1.23.17...v1.24.0) (2019-11-07)
 
 
