@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.27.7](https://github.com/daryl-walsh/small-batch-react/compare/v1.27.6...v1.27.7) (2019-11-11)
+
+
+### Bug Fixes
+
+* **cypress_env:** update cypress env var ([455c028](https://github.com/daryl-walsh/small-batch-react/commit/455c028))
+
 ### [1.27.6](https://github.com/daryl-walsh/small-batch-react/compare/v1.27.5...v1.27.6) (2019-11-11)
 
 ### [1.27.5](https://github.com/daryl-walsh/small-batch-react/compare/v1.27.4...v1.27.5) (2019-11-11)
