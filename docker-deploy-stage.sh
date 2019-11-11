@@ -55,6 +55,15 @@ then
     
       update_service
 
+      # exercises
+      service="sbr-exercises-stage-service"
+      template="ecs_exercises_stage_taskdefinition.json"
+      task_template=$(cat "ecs/$template")
+      task_def=$(printf "$task_template" $AWS_ACCOUNT_ID $AWS_ACCOUNT_ID)
+      echo "$task_def"
+      register_definition
+      update_service
+
       # swagger
       service="sbr-swagger-stage-service"
       template="ecs_swagger_stage_taskdefinition.json"
