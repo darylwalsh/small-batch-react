@@ -2,21 +2,41 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### [1.28.1](https://github.com/daryl-walsh/small-batch-react/compare/v1.28.0...v1.28.1) (2019-11-11)
-
-## [1.28.0](https://github.com/daryl-walsh/small-batch-react/compare/v1.27.7...v1.28.0) (2019-11-11)
-
-
-### Features
-
-* **exercises_service:** update exercises  service ([c9d4532](https://github.com/daryl-walsh/small-batch-react/commit/c9d4532))
-
-### [1.27.7](https://github.com/daryl-walsh/small-batch-react/compare/v1.27.6...v1.27.7) (2019-11-11)
+### [1.28.4](https://github.com/daryl-walsh/small-batch-react/compare/v1.28.3...v1.28.4) (2019-11-12)
 
 
 ### Bug Fixes
 
-* **cypress_env:** update cypress env var ([455c028](https://github.com/daryl-walsh/small-batch-react/commit/455c028))
+* **aws_rds:** update aws rds ([92d5679](https://github.com/daryl-walsh/small-batch-react/commit/92d5679))
+
+### [1.28.3](https://github.com/daryl-walsh/small-batch-react/compare/v1.28.2...v1.28.3) (2019-11-12)
+
+
+### Bug Fixes
+
+* **aws)logs:** add aws logs for exercises ([78b1545](https://github.com/daryl-walsh/small-batch-react/commit/78b1545))
+
+### [1.28.2](https://github.com/daryl-walsh/small-batch-react/compare/v1.28.1...v1.28.2) (2019-11-12)
+
+
+### Bug Fixes
+
+* **merge:** reconcile fork repo ([e4da1c2](https://github.com/daryl-walsh/small-batch-react/commit/e4da1c2))
+* **package.json:** update package.json repo ([a4524d5](https://github.com/daryl-walsh/small-batch-react/commit/a4524d5))
+
+### [1.28.1](https://github.com/daryl-walsh/small-batch-react/compare/v1.28.0...v1.28.1) (2019-11-11)
+
+## [1.28.0](https://github.com/daryl-walsh/small-batch-react/compare/v1.27.7...v1.28.0) (2019-11-11)
+
+### Features
+
+- **exercises_service:** update exercises service ([c9d4532](https://github.com/daryl-walsh/small-batch-react/commit/c9d4532))
+
+### [1.27.7](https://github.com/daryl-walsh/small-batch-react/compare/v1.27.6...v1.27.7) (2019-11-11)
+
+### Bug Fixes
+
+- **cypress_env:** update cypress env var ([455c028](https://github.com/daryl-walsh/small-batch-react/commit/455c028))
 
 ### [1.27.6](https://github.com/daryl-walsh/small-batch-react/compare/v1.27.5...v1.27.6) (2019-11-11)
 
@@ -26,75 +46,69 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [1.27.3](https://github.com/daryl-walsh/small-batch-react/compare/v1.27.0...v1.27.3) (2019-11-11)
 
-
 ### Bug Fixes
 
-* **merge:** reconcile fork repo ([4b256f3](https://github.com/daryl-walsh/small-batch-react/commit/4b256f3))
-* **merge:** reconcile fork repo ([84ce62f](https://github.com/daryl-walsh/small-batch-react/commit/84ce62f))
+- **merge:** reconcile fork repo ([4b256f3](https://github.com/daryl-walsh/small-batch-react/commit/4b256f3))
+- **merge:** reconcile fork repo ([84ce62f](https://github.com/daryl-walsh/small-batch-react/commit/84ce62f))
 
 ### [1.27.2](https://github.com/daryl-walsh/small-batch-react/compare/v1.27.0...v1.27.2) (2019-11-11)
 
-
 ### Bug Fixes
 
-* **merge:** reconcile fork repo ([4b256f3](https://github.com/daryl-walsh/small-batch-react/commit/4b256f3))
-* **merge:** reconcile fork repo ([84ce62f](https://github.com/daryl-walsh/small-batch-react/commit/84ce62f))
+- **merge:** reconcile fork repo ([4b256f3](https://github.com/daryl-walsh/small-batch-react/commit/4b256f3))
+- **merge:** reconcile fork repo ([84ce62f](https://github.com/daryl-walsh/small-batch-react/commit/84ce62f))
 
 ### [1.27.1](https://github.com/daryl-walsh/small-batch-react/compare/v1.27.0...v1.27.1) (2019-11-11)
 
-
 ### Bug Fixes
 
-* **merge:** reconcile fork repo ([4b256f3](https://github.com/daryl-walsh/small-batch-react/commit/4b256f3))
-* **merge:** reconcile fork repo ([84ce62f](https://github.com/daryl-walsh/small-batch-react/commit/84ce62f))
+# <<<<<<< HEAD
+
+- **merge:** reconcile fork repo ([4b256f3](https://github.com/daryl-walsh/small-batch-react/commit/4b256f3))
+  > > > > > > > 20cf97e971feb654f7ac62713b6260789df1c53c
+- **merge:** reconcile fork repo ([84ce62f](https://github.com/daryl-walsh/small-batch-react/commit/84ce62f))
 
 ## [1.27.0](https://github.com/daryl-walsh/small-batch-react/compare/v1.26.4...v1.27.0) (2019-11-10)
 
-
 ### Features
 
-* **aws_exercises:** add aws ecr for exercises ([8af1139](https://github.com/daryl-walsh/small-batch-react/commit/8af1139))
+- **aws_exercises:** add aws ecr for exercises ([8af1139](https://github.com/daryl-walsh/small-batch-react/commit/8af1139))
 
 ### [1.26.4](https://github.com/daryl-walsh/small-batch-react/compare/v1.26.3...v1.26.4) (2019-11-10)
 
-
 ### Bug Fixes
 
-* **jest:** update jest snapshot ([387ed3b](https://github.com/daryl-walsh/small-batch-react/commit/387ed3b))
+- **jest:** update jest snapshot ([387ed3b](https://github.com/daryl-walsh/small-batch-react/commit/387ed3b))
 
 ### [1.26.3](https://github.com/daryl-walsh/small-batch-react/compare/v1.26.2...v1.26.3) (2019-11-10)
 
 ### [1.26.2](https://github.com/daryl-walsh/small-batch-react/compare/v1.26.1...v1.26.2) (2019-11-10)
 
-
 ### Bug Fixes
 
-* **requirements.txt:** force add requirements.txt ([7be9edd](https://github.com/daryl-walsh/small-batch-react/commit/7be9edd))
+- **requirements.txt:** force add requirements.txt ([7be9edd](https://github.com/daryl-walsh/small-batch-react/commit/7be9edd))
 
 ### [1.26.1](https://github.com/daryl-walsh/small-batch-react/compare/v1.26.0...v1.26.1) (2019-11-10)
 
 ## [1.26.0](https://github.com/daryl-walsh/small-batch-react/compare/v1.25.1...v1.26.0) (2019-11-10)
 
-
 ### Features
 
-* **exercises:** add exercises components ([5023b46](https://github.com/daryl-walsh/small-batch-react/commit/5023b46))
+- **exercises:** add exercises components ([5023b46](https://github.com/daryl-walsh/small-batch-react/commit/5023b46))
 
 ### [1.25.1](https://github.com/daryl-walsh/small-batch-react/compare/v1.25.0...v1.25.1) (2019-11-08)
 
 ## [1.25.0](https://github.com/daryl-walsh/small-batch-react/compare/v1.24.0...v1.25.0) (2019-11-08)
 
-
 ### Features
 
-* **exercises:** add exercises gui/db ([8695fa2](https://github.com/daryl-walsh/small-batch-react/commit/8695fa2))
+- **exercises:** add exercises gui/db ([8695fa2](https://github.com/daryl-walsh/small-batch-react/commit/8695fa2))
 
 ## [1.24.0](https://github.com/daryl-walsh/small-batch-react/compare/v1.23.17...v1.24.0) (2019-11-07)
 
-
 ### Features
 
-* **aws_prod:** add aws ecs cluster for prod ([3799858](https://github.com/daryl-walsh/small-batch-react/commit/3799858))
+- **aws_prod:** add aws ecs cluster for prod ([3799858](https://github.com/daryl-walsh/small-batch-react/commit/3799858))
 
 ### [1.23.17](https://github.com/daryl-walsh/small-batch-react/compare/v1.23.16...v1.23.17) (2019-11-07)
 

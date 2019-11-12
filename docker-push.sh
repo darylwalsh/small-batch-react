@@ -12,7 +12,7 @@ then
     export DOCKER_ENV=prod
     export REACT_APP_USERS_SERVICE_URL="http://www.smallbatchreact.com"
     export REACT_APP_EXERCISES_SERVICE_URL="http://www.smallbatchreact.com"
-    export DATABASE_URL="$AWS_RDS_URI" 
+    export DATABASE_URL="postgres://webapp:Cl34nN33dl3@sbr-exercises-production.c6qzuvxoniof.us-west-1.rds.amazonaws.com:5432/users_prod" 
     export SECRET_KEY="$PRODUCTION_SECRET_KEY"  
   fi
 
