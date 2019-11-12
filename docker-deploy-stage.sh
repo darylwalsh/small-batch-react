@@ -42,7 +42,6 @@ then
       task_def=$(printf "$task_template" $AWS_ACCOUNT_ID $AWS_ACCOUNT_ID)
       echo "$task_def"
       register_definition
-      
       update_service
 
       # client
@@ -52,7 +51,6 @@ then
       task_def=$(printf "$task_template" $AWS_ACCOUNT_ID)
       echo "$task_def"
       register_definition
-    
       update_service
 
       # exercises
@@ -71,7 +69,6 @@ then
       task_def=$(printf "$task_template" $AWS_ACCOUNT_ID)
       echo "$task_def"
       register_definition
-   
       update_service 
 
     }
