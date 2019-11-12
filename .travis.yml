@@ -31,6 +31,8 @@ before_script:
   - export REACT_APP_USERS_SERVICE_URL=http://127.0.0.1
   - export REACT_APP_EXERCISES_SERVICE_URL=http://127.0.0.1
   - export REACT_APP_API_GATEWAY_URL=https://o6bh1x5ub1.execute-api.us-west-1.amazonaws.com/v1/execute
+  - if [[ "$TRAVIS_BRANCH" == "staging" ]]; then export LOAD_BALANCER_DNS_NAME=http://stage.smallbatchreact.com; fi
+  - if [[ "$TRAVIS_BRANCH" == "production" ]]; then export LOAD_BALANCER_DNS_NAME=http://www.smallbatchreact.com; fi
   - npm install
   - npx cypress install
 

@@ -2,6 +2,52 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.28.1](https://github.com/daryl-walsh/small-batch-react/compare/v1.28.0...v1.28.1) (2019-11-11)
+
+## [1.28.0](https://github.com/daryl-walsh/small-batch-react/compare/v1.27.7...v1.28.0) (2019-11-11)
+
+
+### Features
+
+* **exercises_service:** update exercises  service ([c9d4532](https://github.com/daryl-walsh/small-batch-react/commit/c9d4532))
+
+### [1.27.7](https://github.com/daryl-walsh/small-batch-react/compare/v1.27.6...v1.27.7) (2019-11-11)
+
+
+### Bug Fixes
+
+* **cypress_env:** update cypress env var ([455c028](https://github.com/daryl-walsh/small-batch-react/commit/455c028))
+
+### [1.27.6](https://github.com/daryl-walsh/small-batch-react/compare/v1.27.5...v1.27.6) (2019-11-11)
+
+### [1.27.5](https://github.com/daryl-walsh/small-batch-react/compare/v1.27.4...v1.27.5) (2019-11-11)
+
+### [1.27.4](https://github.com/daryl-walsh/small-batch-react/compare/v1.27.3...v1.27.4) (2019-11-11)
+
+### [1.27.3](https://github.com/daryl-walsh/small-batch-react/compare/v1.27.0...v1.27.3) (2019-11-11)
+
+
+### Bug Fixes
+
+* **merge:** reconcile fork repo ([4b256f3](https://github.com/daryl-walsh/small-batch-react/commit/4b256f3))
+* **merge:** reconcile fork repo ([84ce62f](https://github.com/daryl-walsh/small-batch-react/commit/84ce62f))
+
+### [1.27.2](https://github.com/daryl-walsh/small-batch-react/compare/v1.27.0...v1.27.2) (2019-11-11)
+
+
+### Bug Fixes
+
+* **merge:** reconcile fork repo ([4b256f3](https://github.com/daryl-walsh/small-batch-react/commit/4b256f3))
+* **merge:** reconcile fork repo ([84ce62f](https://github.com/daryl-walsh/small-batch-react/commit/84ce62f))
+
+### [1.27.1](https://github.com/daryl-walsh/small-batch-react/compare/v1.27.0...v1.27.1) (2019-11-11)
+
+
+### Bug Fixes
+
+* **merge:** reconcile fork repo ([4b256f3](https://github.com/daryl-walsh/small-batch-react/commit/4b256f3))
+* **merge:** reconcile fork repo ([84ce62f](https://github.com/daryl-walsh/small-batch-react/commit/84ce62f))
+
 ## [1.27.0](https://github.com/daryl-walsh/small-batch-react/compare/v1.26.4...v1.27.0) (2019-11-10)
 
 

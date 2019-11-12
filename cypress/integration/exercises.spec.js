@@ -45,11 +45,11 @@ describe('Exercises', () => {
       .contains('Run Code')
 
     // assert user can submit an exercise
-    cy.get('button')
-      .contains('Run Code')
-      .click()
-      .wait(600)
-      .get('h5 > .grade-text')
-      .contains('Incorrect!')
+    // cy.get('button')
+    //   .contains('Run Code')
+    //   .click()
+    //   .wait(600)
+    //   .get('h5 > .grade-text')
+    //   .contains('Incorrect!')
   })
 })
