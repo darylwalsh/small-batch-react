@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.30.0](https://github.com/daryl-walsh/small-batch-react/compare/v1.29.1...v1.30.0) (2019-11-12)
+
+
+### Features
+
+* **aws_rds:** update aws rds ([4445c2d](https://github.com/daryl-walsh/small-batch-react/commit/4445c2d))
+
 ### [1.29.1](https://github.com/daryl-walsh/small-batch-react/compare/v1.29.0...v1.29.1) (2019-11-12)
 
 ## [1.29.0](https://github.com/daryl-walsh/small-batch-react/compare/v1.28.6...v1.29.0) (2019-11-12)
