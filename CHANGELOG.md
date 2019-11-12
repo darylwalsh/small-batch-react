@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.29.0](https://github.com/daryl-walsh/small-batch-react/compare/v1.28.6...v1.29.0) (2019-11-12)
+
+
+### Features
+
+* **prod_rds:** update prod rds urls ([bcec397](https://github.com/daryl-walsh/small-batch-react/commit/bcec397))
+
 ### [1.28.6](https://github.com/daryl-walsh/small-batch-react/compare/v1.28.5...v1.28.6) (2019-11-12)
 
 
