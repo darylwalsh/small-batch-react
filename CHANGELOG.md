@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.28.5](https://github.com/daryl-walsh/small-batch-react/compare/v1.28.4...v1.28.5) (2019-11-12)
+
+
+### Bug Fixes
+
+* **swagger:** update swagger spec ([c45170e](https://github.com/daryl-walsh/small-batch-react/commit/c45170e))
+
 ### [1.28.4](https://github.com/daryl-walsh/small-batch-react/compare/v1.28.3...v1.28.4) (2019-11-12)
 
 
