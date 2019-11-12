@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.28.2](https://github.com/daryl-walsh/small-batch-react/compare/v1.28.1...v1.28.2) (2019-11-12)
+
+
+### Bug Fixes
+
+* **merge:** reconcile fork repo ([e4da1c2](https://github.com/daryl-walsh/small-batch-react/commit/e4da1c2))
+* **package.json:** update package.json repo ([a4524d5](https://github.com/daryl-walsh/small-batch-react/commit/a4524d5))
+
 ### [1.28.1](https://github.com/daryl-walsh/small-batch-react/compare/v1.28.0...v1.28.1) (2019-11-11)
 
 ## [1.28.0](https://github.com/daryl-walsh/small-batch-react/compare/v1.27.7...v1.28.0) (2019-11-11)
