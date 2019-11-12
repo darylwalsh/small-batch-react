@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.28.3](https://github.com/daryl-walsh/small-batch-react/compare/v1.28.2...v1.28.3) (2019-11-12)
+
+
+### Bug Fixes
+
+* **aws)logs:** add aws logs for exercises ([78b1545](https://github.com/daryl-walsh/small-batch-react/commit/78b1545))
+
 ### [1.28.2](https://github.com/daryl-walsh/small-batch-react/compare/v1.28.1...v1.28.2) (2019-11-12)
 
 
