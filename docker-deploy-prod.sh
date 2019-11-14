@@ -39,7 +39,7 @@ then
       service="sbr-users-prod-service"  
       template="ecs_users_prod_taskdefinition.json"
       task_template=$(cat "ecs/$template")
-      task_def=$(printf "$task_template" $AWS_ACCOUNT_ID "postgres://sbr187:${DB_LOGIN}@sbr-prod-rds.c6qzuvxoniof.us-west-1.rds.amazonaws.com:5432/users_prod" $PRODUCTION_SECRET_KEY)
+      task_def=$(printf "$task_template" $AWS_ACCOUNT_ID "<db_url>" $PRODUCTION_SECRET_KEY)
       echo "$task_def"
       register_definition
       update_service  
@@ -57,7 +57,7 @@ then
       service="sbr-exercises-prod-service"
       template="ecs_exercises_prod_taskdefinition.json"
       task_template=$(cat "ecs/$template")
-      task_def=$(printf "$task_template" $AWS_ACCOUNT_ID "postgres://webapp:${DB_LOGIN}@sbr-exercises-production.c6qzuvxoniof.us-west-1.rds.amazonaws.com:5432/exercises_prod")
+      task_def=$(printf "$task_template" $AWS_ACCOUNT_ID "<db_url>")
       echo "$task_def"
       register_definition
       update service
