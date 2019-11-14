@@ -13,7 +13,7 @@ describe('When given a success message', () => {
     removeMessage: removeMessage,
   }
 
-  it('Message renders properly', () => {
+  it(`Message renders properly`, () => {
     const wrapper = shallow(<Message {...messageSuccessProps} />)
     const element = wrapper.find('.notification.is-success')
     expect(element.length).toBe(1)
@@ -44,7 +44,7 @@ describe('When given a danger message', () => {
     removeMessage: removeMessage,
   }
 
-  it('Message renders properly', () => {
+  it(`Message renders properly`, () => {
     const wrapper = shallow(<Message {...messageDangerProps} />)
     const element = wrapper.find('.notification.is-danger')
     expect(element.length).toBe(1)

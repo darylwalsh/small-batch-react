@@ -14,7 +14,7 @@ services:
       - APP_SETTINGS=project.config.DevelopmentConfig
       - DATABASE_URL=postgres://postgres:postgres@users-db:5432/users_dev
       - DATABASE_TEST_URL=postgres://postgres:postgres@users-db:5432/users_test
-      - SECRET_KEY=sbr_key
+      - SECRET_KEY=my_precious
     depends_on:
       - users-db
 
@@ -28,17 +28,6 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
 
-  nginx:
-    build:
-      context: ./services/nginx
-      dockerfile: Dockerfile
-    restart: always
-    ports:
-      - 80:80
-    depends_on:
-      - users
-      - client
-
   client:
     build:
       context: ./services/client
@@ -51,6 +40,8 @@ services:
     environment:
       - NODE_ENV=development
       - REACT_APP_USERS_SERVICE_URL=${REACT_APP_USERS_SERVICE_URL}
+      - REACT_APP_API_GATEWAY_URL=${REACT_APP_API_GATEWAY_URL}
+      - REACT_APP_EXERCISES_SERVICE_URL=${REACT_APP_EXERCISES_SERVICE_URL}
     depends_on:
       - users
 
@@ -67,11 +58,11 @@ services:
       - APP_SETTINGS=project.config.DevelopmentConfig
       - USERS_SERVICE_URL=http://users:5000
       - SECRET_KEY=sbr_key
-      - DATABASE_URL=postgres://postgres:postgres@exercises-db:5432/exercises_dev # new
-      - DATABASE_TEST_URL=postgres://postgres:postgres@exercises-db:5432/exercises_test # new
+      - DATABASE_URL=postgres://postgres:postgres@exercises-db:5432/exercises_dev
+      - DATABASE_TEST_URL=postgres://postgres:postgres@exercises-db:5432/exercises_test
     depends_on:
       - users
-      - exercises-db # new
+      - exercises-db
 
   exercises-db:
     build:
@@ -92,6 +83,17 @@ services:
     ports:
       - 3008:8080
     environment:
-      - URL=swagger.json
+      - URL=https://petstore.swagger.io/v2/swagger.json
     depends_on:
       - users
+
+  nginx:
+    build:
+      context: ./services/nginx
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 80:80
+    depends_on:
+      - users
+      - client

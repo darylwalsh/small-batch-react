@@ -15,7 +15,7 @@
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
-          "awslogs-group": "sbr-client-prod",
+          "awslogs-group": "/ecs/sbr-client-prod-td",
           "awslogs-region": "us-west-1"
         }
       }

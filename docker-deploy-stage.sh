@@ -24,7 +24,7 @@ then
       fi
     }
 
-    update_service() {
+     update_service() {
       if [[ $(aws ecs update-service --cluster $cluster --service $service --task-definition $revision | $JQ '.service.taskDefinition') != $revision ]]; then
         echo "Error updating service."
         return 1
@@ -53,6 +53,15 @@ then
       register_definition
       update_service
 
+      # exercises
+      service="sbr-exercises-stage-service"
+      template="ecs_exercises_stage_taskdefinition.json"
+      task_template=$(cat "ecs/$template")
+      task_def=$(printf "$task_template" $AWS_ACCOUNT_ID $AWS_ACCOUNT_ID)
+      echo "$task_def"
+      register_definition
+      update_service
+
       # swagger
       service="sbr-swagger-stage-service"
       template="ecs_swagger_stage_taskdefinition.json"
@@ -60,7 +69,7 @@ then
       task_def=$(printf "$task_template" $AWS_ACCOUNT_ID)
       echo "$task_def"
       register_definition
-      update_service
+      update_service 
 
     }
 

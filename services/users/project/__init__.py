@@ -10,7 +10,8 @@ from flask_cors import CORS
 from flask_migrate import Migrate
 from flask_bcrypt import Bcrypt
 
-# instantiate the db
+
+# instantiate the extensions
 db = SQLAlchemy()
 toolbar = DebugToolbarExtension()
 cors = CORS()

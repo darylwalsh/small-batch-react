@@ -18,9 +18,9 @@ const NavBar = props => (
             toggle.classList.toggle('is-active')
             menu.classList.toggle('is-active')
           }}>
-          <span />
-          <span />
-          <span />
+          <span></span>
+          <span></span>
+          <span></span>
         </span>
       </div>
       <div className="navbar-menu">
@@ -39,20 +39,23 @@ const NavBar = props => (
               User Status
             </Link>
           )}
+          {/* new */}
           <a href="/swagger" className="navbar-item">
             Swagger
           </a>
         </div>
         <div className="navbar-end">
+          {/* new */}
           {!props.isAuthenticated && (
-            <Link to="/register" className="button is-primary">
-              Register
-            </Link>
-          )}
-          {!props.isAuthenticated && (
-            <Link to="/login" className="button is-link">
-              Log In
-            </Link>
+            <div className="navbar-item">
+              <Link to="/register" className="button is-primary">
+                Register
+              </Link>
+              &nbsp;
+              <Link to="/login" className="button is-link">
+                Log In
+              </Link>
+            </div>
           )}
           {props.isAuthenticated && (
             <Link to="/logout" className="navbar-item">

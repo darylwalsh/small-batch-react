@@ -7,7 +7,7 @@
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
-          "awslogs-group": "sbr-swagger-prod",
+          "awslogs-group": "/ecs/sbr-swagger-prod-td",
           "awslogs-region": "us-west-1"
         }
       },

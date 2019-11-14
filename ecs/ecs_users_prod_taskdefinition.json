@@ -33,7 +33,7 @@
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
-          "awslogs-group": "sbr-users-prod",
+          "awslogs-group": "/ecs/sbr-users-prod-td",
           "awslogs-region": "us-west-1"
         }
       }

@@ -15,19 +15,19 @@ li:before {
 }
 
 .error {
-  color: #FF3860;
+  color: #ff3860;
 }
 
 .error:before {
-  content: "\00D7";
-  color: #FF3860;
+  content: '\00D7';
+  color: #ff3860;
 }
 
 .success {
-  color: #23D160;
+  color: #23d160;
 }
 
 .success:before {
-  content: "\2713";
-  color: #23D160;
+  content: '\2713';
+  color: #23d160;
 }

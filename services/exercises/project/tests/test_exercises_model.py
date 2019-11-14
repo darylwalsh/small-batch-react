@@ -1,6 +1,5 @@
 # services/exercises/project/tests/test_exercises_model.py
 
-
 from project.tests.base import BaseTestCase
 from project.tests.utils import add_exercise
 

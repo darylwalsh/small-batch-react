@@ -10,6 +10,7 @@ from flask.cli import FlaskGroup
 from project import create_app, db
 from project.api.models import User
 
+
 COV = coverage.coverage(
     branch=True,
     include='project/*',
@@ -34,10 +35,16 @@ def recreate_db():
 @cli.command('seed_db')
 def seed_db():
     """Seeds the database."""
-    db.session.add(User(username='daryl', email='daryl@blpc.us',
-                        password='greaterthaneight'))
-    db.session.add(User(username='dmw', email='gitopsreact@blpc.us',
-                        password='greaterthaneight'))
+    db.session.add(User(
+        username='daryl',
+        email='daryl@testdomain.com',
+        password='greaterthaneight'
+    ))
+    db.session.add(User(
+        username='darylblpc',
+        email='gitopsreact@blpc.us',
+        password='greaterthaneight'
+    ))
     db.session.commit()
 
 

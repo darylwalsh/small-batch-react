@@ -7,8 +7,7 @@ const Message = props => {
         className="delete"
         onClick={() => {
           props.removeMessage()
-        }}
-      />
+        }}></button>
       <span>{props.messageName}</span>
     </div>
   )

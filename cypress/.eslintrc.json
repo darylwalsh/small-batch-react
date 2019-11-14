@@ -1,0 +1,16 @@
+{
+  "env": {
+    "cypress/globals": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "plugin:cypress/recommended"
+  ],
+  "plugins": ["cypress"],
+  "rules": {
+    "jest/valid-expect-in-promise": "off",
+    "jest/valid-expect": "off",
+    "cypress/no-unnecessary-waiting": "off"
+  }
+}

@@ -5,7 +5,6 @@ class Logout extends Component {
   componentDidMount() {
     this.props.logoutUser()
   }
-
   render() {
     return (
       <div>

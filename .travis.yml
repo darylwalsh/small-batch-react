@@ -1,42 +1,49 @@
-language: node_js
 sudo: required
+
 services:
   - docker
+
 env:
-  CI: true
-  NODE_ENV: test
   DOCKER_COMPOSE_VERSION: 1.23.2
-  COMMIT: '${TRAVIS_COMMIT::8}'
-  MAIN_REPO: https://github.com/darylwalsh/small-batch-react.git
+  COMMIT: ${TRAVIS_COMMIT::8}
+  MAIN_REPO: https://github.com/daryl-walsh/small-batch-react.git
   USERS: sbr-users
-  USERS_REPO: '${MAIN_REPO}#${TRAVIS_BRANCH}:services/users'
+  USERS_REPO: ${MAIN_REPO}#${TRAVIS_BRANCH}:services/users
   USERS_DB: sbr-users_db
-  USERS_DB_REPO: '${MAIN_REPO}#${TRAVIS_BRANCH}:services/users/project/db'
+  USERS_DB_REPO: ${MAIN_REPO}#${TRAVIS_BRANCH}:services/users/project/db
   CLIENT: sbr-client
-  CLIENT_REPO: '${MAIN_REPO}#${TRAVIS_BRANCH}:services/client'
+  CLIENT_REPO: ${MAIN_REPO}#${TRAVIS_BRANCH}:services/client
   SWAGGER: sbr-swagger
-  SWAGGER_REPO: '${MAIN_REPO}#${TRAVIS_BRANCH}:services/swagger'
-  SECRET_KEY: sbr_key
+  SWAGGER_REPO: ${MAIN_REPO}#${TRAVIS_BRANCH}:services/swagger
+  EXERCISES: sbr-exercises
+  EXERCISES_REPO: ${MAIN_REPO}#${TRAVIS_BRANCH}:services/exercises
+  EXERCISES_DB: sbr-exercises_db
+  EXERCISES_DB_REPO: ${MAIN_REPO}#${TRAVIS_BRANCH}:services/exercises/project/db
+  SECRET_KEY: d99423f260dd3cf8de3cadb173f20c2dac40046fffb3f4af
 
 before_install:
   - sudo rm /usr/local/bin/docker-compose
   - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
-install:
-  - npm i -g npm@6.9.0
-  - npm ci
+
 before_script:
-  - export REACT_APP_USERS_SERVICE_URL="http://sbr-staging-alb-1020513120.us-west-1.elb.amazonaws.com"
+  - export REACT_APP_USERS_SERVICE_URL=http://127.0.0.1
+  - export REACT_APP_EXERCISES_SERVICE_URL=http://127.0.0.1
+  - export REACT_APP_API_GATEWAY_URL=https://o6bh1x5ub1.execute-api.us-west-1.amazonaws.com/v1/execute
+  - if [[ "$TRAVIS_BRANCH" == "staging" ]]; then export LOAD_BALANCER_DNS_NAME=http://stage.smallbatchreact.com; fi
+  - if [[ "$TRAVIS_BRANCH" == "production" ]]; then export LOAD_BALANCER_DNS_NAME=http://www.smallbatchreact.com; fi
+  - npm install
+  - npx cypress install
+
 script:
   - bash test-ci.sh $TRAVIS_BRANCH
-cache:
-  # Caches $HOME/.npm when npm ci is default script command
-  # Caches node_modules in all other cases
-  npm: true
-  directories:
-    # we also need to cache folder with Cypress binary
-    - ~/.cache
+  #- bash test.sh stage
+
+#after_script:
+#  - docker-compose down
+
 after_success:
   - bash ./docker-push.sh
-  - bash ./docker-deploy-stage.sh  
+  - bash ./docker-deploy-stage.sh
+  - bash ./docker-deploy-prod.sh

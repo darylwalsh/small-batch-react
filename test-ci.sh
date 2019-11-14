@@ -1,6 +1,7 @@
 #!/bin/bash
 
 
+
 env=$1
 fails=""
 
@@ -25,11 +26,12 @@ dev() {
   inspect $? client
   docker-compose down
 }
+
 # run e2e tests
 e2e() {
   docker-compose -f docker-compose-stage.yml up -d --build
   docker-compose -f docker-compose-stage.yml exec users python manage.py recreate_db
-  ./node_modules/.bin/cypress run --config baseUrl=http://localhost
+  ./node_modules/.bin/cypress run --config baseUrl=http://localhost --env REACT_APP_API_GATEWAY_URL=$REACT_APP_API_GATEWAY_URL,LOAD_BALANCER_DNS_NAME=$LOAD_BALANCER_DNS_NAME
   inspect $? e2e
   docker-compose -f docker-compose-$1.yml down
 }
@@ -40,10 +42,13 @@ if [[ "${env}" == "development" ]]; then
   dev
 elif [[ "${env}" == "staging" ]]; then
   echo "Running e2e tests!"
-  #e2e stage
+  e2e stage
 elif [[ "${env}" == "production" ]]; then
   echo "Running e2e tests!"
-  #e2e prod
+  e2e prod
+else
+  echo "Running client and server-side tests!"
+  dev
 fi
 
 # return proper code

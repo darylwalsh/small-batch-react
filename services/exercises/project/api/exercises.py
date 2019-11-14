@@ -2,7 +2,7 @@
 
 
 from sqlalchemy import exc
-from flask import Blueprint, request
+from flask import Blueprint, request, jsonify
 from flask_restful import Resource, Api
 
 from project import db
@@ -12,6 +12,14 @@ from project.api.utils import authenticate_restful
 
 exercises_blueprint = Blueprint('exercises', __name__)
 api = Api(exercises_blueprint)
+
+
+@exercises_blueprint.route('/exercises/ping', methods=['GET'])
+def ping_pong():
+    return jsonify({
+        'status': 'success',
+        'message': 'pong!'
+    })
 
 
 class ExerciseList(Resource):
@@ -66,28 +74,6 @@ class ExerciseList(Resource):
                 'message': 'Invalid payload.'
             }
             return response_object, 400
-
-    def ensure_authenticated(token):
-        if current_app.config['TESTING']:
-            # new
-            test_response = {
-                'data': {'id': 998877},
-                'status': 'success',
-                'admin': True
-            }
-            # new
-            return test_response
-        url = '{0}/auth/status'.format(current_app.config['USERS_SERVICE_URL'])
-        bearer = 'Bearer {0}'.format(token)
-        headers = {'Authorization': bearer}
-        response = requests.get(url, headers=headers)
-        data = json.loads(response.text)
-        if response.status_code == 200 and \
-                data['status'] == 'success' and \
-                data['data']['active']:
-            return data
-        else:
-            return False
 
 
 api.add_resource(ExerciseList, '/exercises')

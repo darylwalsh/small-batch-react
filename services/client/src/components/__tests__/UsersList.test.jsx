@@ -8,16 +8,16 @@ const users = [
   {
     active: true,
     admin: false,
-    email: 'too@hooroo.sh',
+    email: 'darylwalsh@gmail.com',
     id: 1,
-    username: 'hooroosh',
+    username: 'daryl',
   },
   {
     active: true,
     admin: false,
-    email: 'bfc@freestabby.com',
+    email: 'daryl@blpc.us',
     id: 2,
-    username: 'BFC',
+    username: 'darylblpc',
   },
 ]
 
@@ -42,11 +42,12 @@ test('UsersList renders properly', () => {
   const td = wrapper.find('tbody > tr > td')
   expect(td.length).toBe(10)
   expect(td.get(0).props.children).toBe(1)
-  expect(td.get(1).props.children).toBe('too@hooroo.sh')
-  expect(td.get(2).props.children).toBe('hooroosh')
+  expect(td.get(1).props.children).toBe('darylwalsh@gmail.com')
+  expect(td.get(2).props.children).toBe('daryl')
   expect(td.get(3).props.children).toBe('true')
   expect(td.get(4).props.children).toBe('false')
 })
+
 test('UsersList renders a snapshot properly', () => {
   const tree = renderer.create(<UsersList users={users} />).toJSON()
   expect(tree).toMatchSnapshot()

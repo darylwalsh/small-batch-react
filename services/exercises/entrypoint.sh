@@ -1,4 +1,5 @@
 #!/bin/sh
+
 echo "Waiting for postgres..."
 
 while ! nc -z exercises-db 5432; do
